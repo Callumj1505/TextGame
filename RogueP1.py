@@ -1,5 +1,6 @@
 import random
 import time
+from ListsRogue import response_list, poison_rain_attack, infect_attack, poison_attack_purge, xyrif_random_attacks, buff_list
 
 #charcter health and attacks 
 #==============================================================================================================================#
@@ -8,6 +9,7 @@ rogue = 100
 poision_purge = 35
 infect = 20
 poision_rain = 30
+soul_burst = 40
 
 #a dictionary to get a discription of what the attacks do!
 #==============================================================================================================================#
@@ -77,7 +79,7 @@ f"== THERE IS ONLY ONE VICTOR IN THIS REALM LETS HOPE ITS YOU! ==\n== Poision Pu
 #enemy attack function
 #==============================================================================================================================#
 def xyrif_attack_func():
-        global rogue,
+        global rogue
         enemy_attack_choice = random.choice(xyrif_random_attacks)
         print(enemy_attack_choice)
         if enemy_attack_choice == "HE USES LIGHT BEAM AND LANDS IT!":
@@ -100,49 +102,76 @@ def kill_section2():
 #boss fight starting
 #==============================================================================================================================#
 def boss_fight():
-    global xyrif, random_buff, rogue
+    global xyrif, random_buff, rogue, soul_burst
+    
+    tempest_guardian = 100
+    
+    wraith_strike = 20
+    pulse_blast = 30
+    call_of_guardians = 40
+    
     if xyrif <= 0:
         print (f'=============================================================================================')
         time.sleep(1)
         print (f'-- AMAZING YOU HAVE ENCOUNTERED A SHRINE A BUFF OR DEBUFF COULD BE ADDED LETS HOPE WE GET LUCKY! --')
         time.sleep(1)
+        random_buff = random.choice(buff_list)
+        print(random_buff)
         while True:
             #random buff or debuff is applied to character
             if random_buff == "+25HP":
                 rogue += 25
-                print (f"-- YOU HAVE RECIEVED A HEALTH BONUS OF 25HP YOUR HP IS NOW {character} --")
+                print (f"-- YOU HAVE RECIEVED A HEALTH BONUS OF 25HP YOUR HP IS NOW {rogue} --")
                 break
             elif random_buff == "+10ATK":
                 poision_purge += 5
                 infect += 5
                 poison_rain += 5
-                rolling_thunder += 5
+                soul_burst += 5
                 print ("YOU HAVE GOT AN ATTACK BUFF OF 10 ALL YOUR ATTACKS DO 5 MORE DAMAGE -- ")
                 break
             elif random_buff == "-10HP":
-                character -= 10
-                print(f"-- YOU HAVE BEEN GIVEN A DEBUFF OF -10HP YOU ARE NOW AT {character}")
+                rogue -= 10
+                print(f"-- YOU HAVE BEEN GIVEN A DEBUFF OF -10HP YOU ARE NOW AT {rogue}")
                 break
             elif random_buff == "-10ATK":
-                fireball -= 5
-                zap -= 5
-                wack -= 5
-                rolling_thunder -= 5
+                poision_purge -= 5
+                infect -= 5
+                poision_rain -= 5
+                soul_burst -= 5
                 print("-- YOU HAVE BEEN GIVEN A DEBUFF YOU NOW HAVE -10ATK ALL ATTACKS TO 5 LESS DAMAGE --")
-    time.sleep(second)
-    #playing boss room
-    print ("-- ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS!")
-    print (f'=============================================================================================')
-    time.sleep(second3)
-    #announcing a new attack that the charcter learns
-    print ("-- NEW ATTACK LEARNED ROLLING THUNDER")
-    print ("-- This attack that stuns the enemy for one round and allows you to land 2 attacks without getting hit. You can only use this once every other round.")
-    time.sleep(second)
-    
-    #boss room entrance
-    print (f'======================================================================================================================================================')
-    print ("-- ENTERING THE DUNGEON GORLOCK THE DESTROYER")
-    print (f'=============================================================================================')
+                
+            time.sleep(1)
+            #playing boss room
+            print ("== ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS! ==")
+            print (f'=============================================================================================')
+            time.sleep(3)
+            #announcing a new attack that the charcter learns
+            print ("== NEW ATTACK LEARNED SOUL BURST ==")
+            print ("== IF YOU WOULD LIKE MORE DETAILS ON THE ATTACK TYPE MOVES :) ==")
+            time.sleep(1)
+            
+            #boss room entrance
+            print (f'=============================================================================================')
+            print ("== ENTERING THE DUNGEON WITH THE TEMPEST GUARDIAN ==")
+            print (f'=============================================================================================')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 #First Fight starting

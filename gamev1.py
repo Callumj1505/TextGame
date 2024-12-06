@@ -49,7 +49,7 @@ gorlock_list4 = ["-- OMG HE IS IN THE AIR... AND BOOOOOMMM RIGHT IN HIS BELLY BU
 gorlock_response4 = random.choice(gorlock_list4)
 
 buff_list = ["+25HP", "+10ATK", "-10HP", "-10ATK"]
-random_buff = random.choice(buff_list)
+
 
 #players attacks
 fireball = 30
@@ -104,6 +104,8 @@ def goblin_kill():
         time.sleep(second)
         print (f'-- AMAZING YOU HAVE ENCOUNTERED A SHRINE A BUFF OR DEBUFF COULD BE ADDED LETS HOPE WE GET LUCKY! --')
         time.sleep(second)
+        random_buff = random.choice(buff_list)
+        print(random_buff)
         while True:
             #random buff or debuff is applied to character
             if random_buff == "+25HP":
@@ -141,8 +143,7 @@ def goblin_kill():
         print (f'======================================================================================================================================================')
         print ("-- ENTERING THE DUNGEON GORLOCK THE DESTROYER")
         print (f'=============================================================================================')
-
-
+        
         #first attack
         print ("-- YOU FIRST WHICH ATTACK WILL YOU CHOOSE?")
         print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
