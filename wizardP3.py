@@ -42,47 +42,14 @@ Hammer_swing = 30
 import time
 from PIL import Image
 import random
-from characterkill import charcterdeath
-from endingsection import ending_section
-ending = ending_section()
-char = charcterdeath()
+from lists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4, chest_buff
+from Functions import show_ending_section, show_charcter_Death, kill_section
 
 
 im = Image.open(r'C:\Users\callu\Desktop\coding\r.png')
 im2 = Image.open(r'C:\Users\callu\Desktop\coding\wi.png')
 im3 = Image.open(r'C:\Users\callu\Desktop\coding\w.png')
 
-goblin_attack1 = ["-- HE REPLIES WITH SLAP BUT HE MISSES THANK GOD --", "-- HE REPLIES WITH SLAP AND LANDS OOOFF THAT HURTS --" ]
-random_reponse = random.choice(goblin_attack1)
-
-goblin_attack = ["-- GOBLIN USES BITE AND MISSES! --", "-- GOBLIN USES BITE AND LANDS IT! --"]
-random_response2 = random.choice(goblin_attack)
-
-goblin_attack3 = ["-- GOBLIN USES SPIT AND LANDS IT --", "-- GOBLIN USES SPIT AND MISSES! --" ]
-random_reponse3 = random.choice(goblin_attack3)
-
-gorlock_list = ["-- HE SWINGS WITH ELECTRIC HAMMER AND HITS YOU :O --", "-- HE REPLIES WITH ELECTRIC HAMMER AND MISSES *JESUS NOISES START PLAYING* --"]
-gorlock_response = random.choice(gorlock_list)
-
-gorlock_list2 = ["-- INCOMMING! A HUGE POKE FROM THE BIG MAN HIMSELF! --", "HERE IT COMES... HERE IT LANDS AND HE MISSES IM HAPPY FOR YOU PAL! --"]
-gorlock_response2 = random.choice(gorlock_list2)
-
-gorlock_list3 = ["-- PLEASE NO NOT THE HAMMER AGAIN! BOOM YOUR SQUISHED WITH HIS HAMMER SWING --", "-- THERE IS IMINATE DANGER INBOUND ON YOUR HEAD TOP....... YIKES HE MISSED XD --"]
-gorlock_response3 = random.choice(gorlock_list3)
-
-gorlock_list4 = ["-- OMG HE IS IN THE AIR... AND BOOOOOMMM RIGHT IN HIS BELLY BUTTON HE USES BODY SLAM AND LANDS IT! --", "-- OMG HE IS IN THE AIR... HES FALLING OMG HE MISSED YAYYYYYY --"]
-gorlock_response4 = random.choice(gorlock_list4)
-
-chest_buff = ["-- YOU HAVE RECIEVED A ROBE PEICE WITH +10 ARMORE! --", "-- YOU HAVE RECIEVED A NEW STAFF! +10 PHYSICAL DAMAGE! --", "-- YOU HAVE RECIEVED A NEW SPELLBOOK +10 MAGAICAL DAMAGE --"]
-random.choice(chest_buff)
-
-
-def kill_section():
-    print("-- BOOM YOU FLATTENED HIM GOOD JOB! ONTO LEVEL 2!")
-
-def goblin_kill2():
-    if goblin <= 0:
-        print 
 #---------------------------------------------------------------------------------------------------------------------------------#
 #PATH 2
 #this brings over name from gamebv1.py
@@ -110,7 +77,8 @@ def goblin_killP3():
     if goblin <= 0:
         print (f'=============================================================================================')
         print("-- YOU HAVE BUMPED INTO A CHEST AND FIND A NEW PEICE OF EQUIPMENT! --")
-        print(chest_buff)
+        chest_buff1 = random.choice(chest_buff)
+        print(chest_buff1)
         while True:
             if chest_buff == "-- YOU HAVE RECIEVED A ROBE PEICE WITH +10 ARMORE! --":
                 poke -= 5
@@ -176,7 +144,7 @@ def goblin_killP3():
                 gorlock_answer = input("Choose Fireball, Zap, Wack: ").lower()
                 
             
-        
+        gorlock_response = random.choice(gorlock_list)
         print(gorlock_response)
         print (f'=============================================================================================')
         
@@ -227,13 +195,12 @@ def goblin_killP3():
                 gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
                 
             if gorlock_the_destroyer <= 0:
-                ending.show_ending_section()
+                    show_ending_section()
+                    break
+            elif character <= 0:
+                show_charcter_Death()
                 break
-                
-            if character <= 0:
-                char.show_charcter_Death()
-                break
-                
+            gorlock_response2 = random.choice(gorlock_list2)
             print (gorlock_response2)
             print (f'=============================================================================================')
 
@@ -291,13 +258,12 @@ def goblin_killP3():
                     gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
                     
                 if gorlock_the_destroyer <= 0:
-                    ending.show_ending_section()
+                    show_ending_section()
                     break
-                    
-                if character <= 0:
-                    char.show_charcter_Death()
+                elif character <= 0:
+                    show_charcter_Death()
                     break
-                
+                gorlock_response3 = random.choice(gorlock_list3)
                 print (gorlock_response3)
                 print (f'=============================================================================================')
                 
@@ -355,13 +321,12 @@ def goblin_killP3():
                         gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
                         
                     if gorlock_the_destroyer <= 0:
-                        ending.show_ending_section()
+                        show_ending_section()
                         break
-                        
-                    if character <= 0:
-                        char.show_charcter_Death()
+                    elif character <= 0:
+                        show_charcter_Death()
                         break
-                    
+                gorlock_response4 = random.choice(gorlock_list4)
                 print (gorlock_response4)
                 print("=============================================================================================")
                 
@@ -419,11 +384,10 @@ def goblin_killP3():
                         gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
                     
                     if gorlock_the_destroyer <= 0:
-                        ending.show_ending_section()
+                        show_ending_section()
                         break
-                        
-                    if character <= 0:
-                        char.show_charcter_Death()
+                    elif character <= 0:
+                        show_charcter_Death()
                         break
 
 #---------------------------------------------------------------------------------------------------------------------------------#
@@ -524,6 +488,7 @@ def first_sectionP3():
 
             time.sleep(second)
             print (f'=============================================================================================')
+            random_reponse = random.choice(goblin_attack1)
             print (random_reponse)
             print (f'=============================================================================================')
             time.sleep(second)
@@ -580,6 +545,7 @@ def first_sectionP3():
 
                 time.sleep(second)
                 print (f'=============================================================================================')
+                random_response2 = random.choice(goblin_attack2)
                 print(random_response2)
                 print (f'=============================================================================================')
                 time.sleep(second)
@@ -632,6 +598,7 @@ def first_sectionP3():
                 
                     time.sleep(second)
                     print (f'=============================================================================================')
+                    random_reponse3 = random.choice(goblin_attack3)
                     print(random_reponse3)
                     print (f'=============================================================================================')
                     time.sleep(second)
