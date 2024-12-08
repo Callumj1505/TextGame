@@ -111,15 +111,8 @@ option1 = ["YOUR ATTACKS","poison purge","infect      ","poison rain ","soul bur
 option2 = ["XYRIF ATTACKS","light beam      ","antimatter pulse","punch           ","xyrif           "]#
 option3 = ["TEMPEST GUARDIAN ATTACKS","swing","pulse blast","call of guardians","wraith strike","tempest"]
 
-#THIS APPENDS THE RESPONSE FROM RESPONSE_LIST2 SO IT CAN SAVE IT IF THE ATTACK DESCRIPTION IS CALLED AN RESUME FROM WHERE IT LEFT OFF.
-#==============================================================================================================================#
-response_append =[]
-
 #END OF ROGUE PATH LISTS
 #==============================================================================================================================#
-
-
-response_append =[]
 
 #WIZARD LISTS STARTS NOW
 #================================================================================================================================#

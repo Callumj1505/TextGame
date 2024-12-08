@@ -1,7 +1,7 @@
 import random
 import time
 from colorama import Fore, Style
-from Gamelists import response_list, poison_rain_attack, infect_attack, poison_attack_purge, buff_list, response_list2,attack_description,soul_burst_attack, option1, option2, option3, response_append
+from Gamelists import response_list, poison_rain_attack, infect_attack, poison_attack_purge, buff_list, response_list2,attack_description,soul_burst_attack, option1, option2, option3
 from GameFunctions import Boss_attack_func, xyrif_attack_func, kill_section, show_ending_section, show_charcter_Death
 #character health and attacks 
 #==============================================================================================================================#
@@ -82,17 +82,22 @@ def boss_fight():
             
         time.sleep(1)
         while tempest_guardian > 0:
-            response_list.pop(0)
-            print (random.choice(response_list2))
-            print (f"== XYRIF HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
+            if not stored_response:
+                last_response = (random.choice(response_list2))
+                print (last_response)
+            else:
+                print(stored_response)
+                stored_response = None
+            print (f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
             print (f'=============================================================================================')   
             answer = input("Choose Attack > ").lower()
             if answer in attack_description:
                 print(attack_description[answer])
-            elif response_list2:
-                response_list2.append(response_append)
-                print(response_append)
-            elif answer == "a":
+                stored_response = last_response
+                continue
+        
+            last_response = None
+            if answer == "a":
                 print (f'=============================================================================================')   
                 print (random.choice(poison_attack_purge))
                 xyrif -= 35
@@ -123,11 +128,11 @@ def boss_fight():
                 xyrif -= 40
                 print (f'=============================================================================================')  
                 print (random.choice(soul_burst_attack))
-                print(f"== XYRIF HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
+                print(f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
                 print (f'=============================================================================================')  
                 time.sleep(1)
                 Boss_attack_func()
-                print (f'=============================================================================================')  
+                print (f'=============================================================================================') 
             else:
                 if answer:
                     print (f'=============================================================================================')  
@@ -140,19 +145,19 @@ def boss_fight():
             show_charcter_Death()
             
 
+ast_response = None
+stored_response = None
+
 #First Fight starting
 #==============================================================================================================================#
 def roguepath1():
-    global rogue, xyrif
+    global rogue, xyrif, last_response, stored_response
     with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'r') as file:
         name = file.read()
     print (f'=============================================================================================')      
-    print (Fore.RED + f"== YOU HAVE ENTERED PATH 1 WITH THE ROGUE GET READY! ==")
-    
+    print (Fore.RED + f"== YOU HAVE ENETERED PATH 1 WITH THE ROGUE GET READY! ==")
+    print (f'=============================================================================================')
     time.sleep(1)
-    option1 = ["YOUR ATTACKS","poison purge","infect      ","poison rain ","soul burst  "]
-    option2 = ["XYRIF ATTACKS","light beam      ","antimatter pulse","punch           ","xyrif           "]#
-    option3 = ["TEMPEST GUARDIAN ATTACKS","swing","pulse blast","call of guardians","wraith strike","tempest"]
     print (Fore.CYAN + f"== TO CHOOSE ATTACK PLEASE TYPE 'A' - 'B' - 'C' ==" + Style.RESET_ALL)
     print (f"== YOU CAN VIEW YOUR ATTACKS AND THERE DESCRIPTION BY TYPING ANT OF THE FOLLOWING WHEN INGAME:")
     for item1, item2, item3 in zip(option1, option2, option3):
@@ -161,17 +166,22 @@ def roguepath1():
     
     time.sleep(3)
     while xyrif > 0:
-        response_list.pop(0)
-        print (random.choice(response_list))
+        if not stored_response:
+            last_response = (random.choice(response_list))
+            print (last_response)
+        else:
+            print(stored_response)
+            stored_response = None
         print (f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
         print (f'=============================================================================================')   
         answer = input("Choose Attack > ").lower()
         if answer in attack_description:
             print(attack_description[answer])
-        elif response_list:
-            response_list.append(response_append)
-            print(response_append)
-        elif answer == "a":
+            stored_response = last_response
+            continue
+        
+        last_response = None
+        if answer == "a":
             print (f'=============================================================================================')   
             print (random.choice(poison_attack_purge))
             xyrif -= 35
