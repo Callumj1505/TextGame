@@ -2,7 +2,7 @@
 xyrif = 100
 tempest_guardian = 100
 import random
-from lists import xyrif_random_attacks, tempest_random_attacks
+from Gamelists import xyrif_random_attacks, tempest_random_attacks
 #Boss attack function Rogue P1
 #==============================================================================================================================#
 def Boss_attack_func():
@@ -19,7 +19,7 @@ def Boss_attack_func():
             rogue -= 40
             print(f"== XYRIF HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
         else:
-            print("== WE CAN ALL BE GREATFUL HE MISSED! ==")
+            print("== WE CAN ALL BE GREATFULL HE MISSED! ==")
             
 #1st enemy attack function Rogue P1
 #==============================================================================================================================#
@@ -41,8 +41,13 @@ def xyrif_attack_func():
 
 #first enemy kill text Rogue P1
 #==============================================================================================================================#
-def kill_section2():
-    print("== XYRIF IS DEAD! GOOD JOB ONTO THE NEXT ROOM. ==")
+def kill_section():
+    print("== HE IS DEAD! GOOD JOB ONTO THE NEXT ROOM. ==")
+    
+# END OF ROGUE FUNCTIONS!!!
+#==============================================================================================================================#
+    
+
     
     
     
@@ -53,18 +58,18 @@ def kill_section2():
     
     
     
-    
-    
-    
-    
-#charcter death for all paths
+#ALL PATH FUNCTIONS.
+#==============================================================================================================================#
+
+#character death for all paths
+#==============================================================================================================================#
 def show_charcter_Death():
-    print("-- UNFORTUNATLEY THAT LAST ONE HIT A LITTLE HARD :( --")
-    print("-- YOU HAVE SUCCUMB TO YOUR INJURIES --")
-    print("-- THANK YOU FOR PLAYING: CREATED BY CALLUM JONES --")
+    print("== UNFORTUNATELY THAT LAST ONE HIT A LITTLE HARD :( ==")
+    print("== YOU HAVE SUCCUMB TO YOUR INJURIES ==")
+    print("== THANK YOU FOR PLAYING: CREATED BY CALLUM JONES ==")
     
 #for all paths and characters.
 #==============================================================================================================================#
 def show_ending_section():
-    print("-- CONGRATULATIONS YOU HAVE COMPLETED MY GAME! THANK YOU FOR PLAYING")
-    print("-- GAME CREATE: CALLUM JONES")
+    print("== CONGRATULATIONS YOU HAVE COMPLETED MY GAME! THANK YOU FOR PLAYING")
+    print("== GAME CREATE: CALLUM JONES")
