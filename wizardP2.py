@@ -42,8 +42,8 @@ Hammer_swing = 30
 import time
 from PIL import Image
 import random
-from game.Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4
-from game.GameFunctions import show_ending_section, show_charcter_Death, kill_section
+from Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4
+from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 
 im = Image.open(r'C:\Users\callu\Desktop\coding\r.png')
 im2 = Image.open(r'C:\Users\callu\Desktop\coding\wi.png')
@@ -55,7 +55,7 @@ im3 = Image.open(r'C:\Users\callu\Desktop\coding\w.png')
 with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'r') as file:
     name = file.read()
     
-def goblin_killP3():
+def goblin_killP2():
     #boss hp
     gorlock_the_destroyer = 100
 
@@ -73,108 +73,172 @@ def goblin_killP3():
     
     global character
     
-    if goblin <= 0:
-        print (f'=============================================================================================')
-        print("== YOU HAVE ENCOUNTERED A HEALING TOKEN +30 HP! ==")
-        character += 30
-        print(f"== YOU HP IS NOW {character} ==")
-        print (f'=============================================================================================')
-        time.sleep(second3)
-        print ("== NEW ATTACK LEARNED ROLLING THUNDER")
-        print ("== This attack that stuns the enemy for one round and allows you to land 2 attacks without getting hit. You can only use this once every other round.")
-        time.sleep(second)
-        
-        
-        print (f'======================================================================================================================================================')
-        print ("== ENTERING THE DUNGEON GORLOCK THE DESTROYER")
-        print (f'=============================================================================================')
+
+    print (f'=============================================================================================')
+    print("== YOU HAVE ENCOUNTERED A HEALING TOKEN +30 HP! ==")
+    character += 30
+    print(f"== YOU HP IS NOW {character} ==")
+    print (f'=============================================================================================')
+    time.sleep(second3)
+    print ("== NEW ATTACK LEARNED ROLLING THUNDER")
+    print ("== This attack that stuns the enemy for one round and allows you to land 2 attacks without getting hit. You can only use this once every other round.")
+    time.sleep(second)
+    
+    
+    print (f'======================================================================================================================================================')
+    print ("== ENTERING THE DUNGEON GORLOCK THE DESTROYER")
+    print (f'=============================================================================================')
 
 
-        #first attack
-        print ("== YOU FIRST WHICH ATTACK WILL YOU CHOOSE?")
-        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-        print (f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP == rolling thunder -{rolling_thunder}HP ==")
-        print (f'=============================================================================================')
-        while True:
+    #first attack
+    print ("== YOU FIRST WHICH ATTACK WILL YOU CHOOSE?")
+    print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+    print (f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP == rolling thunder -{rolling_thunder}HP ==")
+    print (f'=============================================================================================')
+    while True:
+        gorlock_answer = input("Choose Fireball, Zap, Wack: ").lower()
+        if gorlock_answer == "fireball":
+            gorlock_the_destroyer -= fireball
+            print("== OOOOO BOSS MAN IS FEELING THAT ONE LOOK AT HIM STUMBLE! ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+            break
+        elif gorlock_answer == "zap":
+            gorlock_the_destroyer -= zap
+            print("== DAYUM I WOULDN'T WANT TO BE THAT GUY! ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+            break
+        elif gorlock_answer == "wack":
+            gorlock_the_destroyer -= wack
+            print("== WACKING A GUY THIS BUG SHOULD BE ILLEGAL AND SHOULD ALSO BE A BANISHABLE OFFENSE! ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+            break
+        elif gorlock_answer == "rolling thunder":
+            gorlock_the_destroyer -= rolling_thunder
+            print("== WAYYYYYY THE NEW ATTACK IS WHERE IT IS AT! GOOD JOB :) ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+            break
+        else:
+            print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
             gorlock_answer = input("Choose Fireball, Zap, Wack: ").lower()
-            if gorlock_answer == "fireball":
-                gorlock_the_destroyer -= fireball
-                print("== OOOOO BOSS MAN IS FEELING THAT ONE LOOK AT HIM STUMBLE! ==")
-                print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                print (f'=============================================================================================')
-                break
-            elif gorlock_answer == "zap":
-                gorlock_the_destroyer -= zap
-                print("== DAYUM I WOULDN'T WANT TO BE THAT GUY! ==")
-                print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                print (f'=============================================================================================')
-                break
-            elif gorlock_answer == "wack":
-                gorlock_the_destroyer -= wack
-                print("== WACKING A GUY THIS BUG SHOULD BE ILLEGAL AND SHOULD ALSO BE A BANISHABLE OFFENSE! ==")
-                print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                print (f'=============================================================================================')
-                break
-            elif gorlock_answer == "rolling thunder":
-                gorlock_the_destroyer -= rolling_thunder
-                print("== WAYYYYYY THE NEW ATTACK IS WHERE IT IS AT! GOOD JOB :) ==")
-                print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                print (f'=============================================================================================')
-                break
-            else:
-                print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
-                gorlock_answer = input("Choose Fireball, Zap, Wack: ").lower()
-                
             
-        gorlock_response = random.choice(gorlock_list)
-        print(gorlock_response)
-        print (f'=============================================================================================')
         
-        if gorlock_response == "== HE REPLIES WITH ELECTRIC HAMMER AND MISSES *JESUS NOISES START PLAYING* ==":
-            print("== OKAY FIRST ONE DOWN GOOD JOB ON NOT GETTING HIT ==")  # TITLE
-            time.sleep(second)
-            print("== WHAT ELSE YOU GOT TO SHOW EM MAKE SURE IT HITS HARD TO PUT THIS GUY DOWN! ==")
-            print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50HP ==")  # ATTACK LIST
+    gorlock_response = random.choice(gorlock_list)
+    print(gorlock_response)
+    print (f'=============================================================================================')
+    
+    if gorlock_response == "== HE REPLIES WITH ELECTRIC HAMMER AND MISSES *JESUS NOISES START PLAYING* ==":
+        print("== OKAY FIRST ONE DOWN GOOD JOB ON NOT GETTING HIT ==")  # TITLE
+        time.sleep(second)
+        print("== WHAT ELSE YOU GOT TO SHOW EM MAKE SURE IT HITS HARD TO PUT THIS GUY DOWN! ==")
+        print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50HP ==")  # ATTACK LIST
+        print("=============================================================================================")
+    if gorlock_response == "== HE SWINGS WITH ELECTRIC HAMMER AND HITS YOU :O ==":
+        character -= Electric_Hammer
+        print("== WELL FIRST ONE DOWN AND ITS NOT LOOKING AMAZING IS IT... ==")
+        print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
+        print("=============================================================================================")
+        time.sleep(second)
+        print("== WHAT ELSE YOU GOT TO SHOW EM MAKE SURE IT HITS HARD TO PUT THIS GUY DOWN! ==") # TITLE
+        print("== fireball -30HP == zap -40HP == wack -20HP == rolling Thunder -50HP ==")  # ATTACK LIST
+        print("=============================================================================================")
+            
+    while True:
+        gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
+        if gorlock_answer2 == "fireball":
+            gorlock_the_destroyer -= fireball
+            print("== SOMEONE CALL A FIREMAN BECAUSE YOUR ON FIREE !!.... or he is :/ ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+        elif gorlock_answer2 == "zap":
+            gorlock_the_destroyer -= zap
+            print("== ZAPPY ZAAPIDY ZAP ZAP WE LOVE EM! GOOD SHOT. ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+        elif gorlock_answer2 == "wack":
+            gorlock_the_destroyer -= wack
+            print("== ITS MOMENTS LIKE THIS WHERE I WISH I WASN'T THE COMMENTATOR YAWWWNNNN. ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+        elif gorlock_answer2 == "rolling thunder":
+            gorlock_the_destroyer -= rolling_thunder
+            print("== ROLLING ROLLING ROLLING KEEP IT ROLLING ROLLING ROLLING! ==")
+            print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+            print (f'=============================================================================================')
+        elif gorlock_answer == "rolling thunder" and gorlock_answer2 == "rolling thunder":
+            print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
             print("=============================================================================================")
-        if gorlock_response == "== HE SWINGS WITH ELECTRIC HAMMER AND HITS YOU :O ==":
-            character -= Electric_Hammer
-            print("== WELL FIRST ONE DOWN AND ITS NOT LOOKING AMAZING IS IT... ==")
+            gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
+        else:
+            print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
+            gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
+            
+        if gorlock_the_destroyer <= 0:
+            show_ending_section()
+            break
+            
+        if character <= 0:
+            show_charcter_Death()
+            break
+        gorlock_response2 = random.choice(gorlock_list2)
+        print (gorlock_response2)
+        print (f'=============================================================================================')
+
+        if gorlock_response2 == "== HERE IT COMES... HERE IT LANDS AND HE MISSES POKE IM HAPPY FOR YOU PAL! ==":
+            print ("== OKAY WELL THANK GOD YOU DIDN'T GET POKED TO DEATH AYE WOULD OF BEEN EMBARRASSING! ==")
+            print("=============================================================================================")
+            time.sleep(second)
+            print("== BUT WE ARE ALMOST THERE I KNOW YOU CAN DO THIS WHAT YOU GOT NEXT? ==")  # TITLE
+            print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")  # ATTACK LIST
+            print("=============================================================================================")
+
+        if gorlock_response2 == "== INCOMING! A HUGE POKE FROM THE BIG MAN HIMSELF! ==":
+            character -= poke
+            print ("== THATS EMBARRASSING IMAGINE GETTING POKED LMAO ==")
             print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
             print("=============================================================================================")
             time.sleep(second)
-            print("== WHAT ELSE YOU GOT TO SHOW EM MAKE SURE IT HITS HARD TO PUT THIS GUY DOWN! ==") # TITLE
-            print("== fireball -30HP == zap -40HP == wack -20HP == rolling Thunder -50HP ==")  # ATTACK LIST
+            print("== BUT WE ARE ALMOST THERE I KNOW YOU CAN DO THIS WHAT YOU GOT NEXT? ==")  # TITLE
+            print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")   # ATTACK LIST
             print("=============================================================================================")
-                
+    
         while True:
-            gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
-            if gorlock_answer2 == "fireball":
+            gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
+            if gorlock_answer3 == "fireball":
                 gorlock_the_destroyer -= fireball
-                print("== SOMEONE CALL A FIREMAN BECAUSE YOUR ON FIREE !!.... or he is :/ ==")
+                print("== SOMEBODY CALL 9-1-1 SOMEBODY KILLED SOMEONE ON THE DANCE FLOOR!... not really but close. ==")
                 print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                 print (f'=============================================================================================')
-            elif gorlock_answer2 == "zap":
+                break
+            elif gorlock_answer3 == "zap":
                 gorlock_the_destroyer -= zap
-                print("== ZAPPY ZAAPIDY ZAP ZAP WE LOVE EM! GOOD SHOT. ==")
+                print("== BLINDED BY THE LIGHTTTTSSSSS! THAT WAS A BRIGHT ZAP KEEP IT UP! ==")
                 print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                 print (f'=============================================================================================')
-            elif gorlock_answer2 == "wack":
+                break
+            elif gorlock_answer3 == "wack":
                 gorlock_the_destroyer -= wack
-                print("== ITS MOMENTS LIKE THIS WHERE I WISH I WASN'T THE COMMENTATOR YAWWWNNNN. ==")
+                print("== DO YOU THINK THIS IS WACK-A-MOLE OR A LIFE OR DEATH SITUATION IM CONFUSED? ==")
                 print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                 print (f'=============================================================================================')
-            elif gorlock_answer2 == "rolling thunder":
+                break
+            elif gorlock_answer3 == "rolling thunder":
                 gorlock_the_destroyer -= rolling_thunder
-                print("== ROLLING ROLLING ROLLING KEEP IT ROLLING ROLLING ROLLING! ==")
+                print("== ROLLING THUNDER HAS HIT HIM HARD AND HEAVY LIKE ALWAYS HEHEHE ==")
                 print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                 print (f'=============================================================================================')
-            elif gorlock_answer == "rolling thunder" and gorlock_answer2 == "rolling thunder":
+                break
+            elif gorlock_answer2 == "rolling thunder" and gorlock_answer3 == "rolling thunder":
                 print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
-                print("=============================================================================================")
-                gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
+                gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
+                print (f'=============================================================================================')
+                break
             else:
                 print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
-                gorlock_answer2 = input("Choose Fireball, Zap, Wack: ").lower()
+                gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
                 
             if gorlock_the_destroyer <= 0:
                 show_ending_section()
@@ -183,55 +247,55 @@ def goblin_killP3():
             if character <= 0:
                 show_charcter_Death()
                 break
-            gorlock_response2 = random.choice(gorlock_list2)
-            print (gorlock_response2)
+            gorlock_response3 = random.choice(gorlock_list3)
+            print (gorlock_response3)
             print (f'=============================================================================================')
-
-            if gorlock_response2 == "== HERE IT COMES... HERE IT LANDS AND HE MISSES POKE IM HAPPY FOR YOU PAL! ==":
-                print ("== OKAY WELL THANK GOD YOU DIDN'T GET POKED TO DEATH AYE WOULD OF BEEN EMBARRASSING! ==")
+            
+            if gorlock_response3 == "== HERE IT COMES... HERE IT LANDS AND HE MISSES HAMMER SWING IM HAPPY FOR YOU PAL! ==":
+                print(f"== {name} YOU KNOW I DIDN'T SEE YOU DODGING THAT ONE BUT YOU DID!==")  # TITLE
                 print("=============================================================================================")
                 time.sleep(second)
-                print("== BUT WE ARE ALMOST THERE I KNOW YOU CAN DO THIS WHAT YOU GOT NEXT? ==")  # TITLE
+                print("== YOU ARE RUNNING OUT OF CHANCES BETTER DO SOMETHING! ==")  # TITLE
                 print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")  # ATTACK LIST
                 print("=============================================================================================")
 
-            if gorlock_response2 == "== INCOMING! A HUGE POKE FROM THE BIG MAN HIMSELF! ==":
-                character -= poke
-                print ("== THATS EMBARRASSING IMAGINE GETTING POKED LMAO ==")
+            if gorlock_response3 == "== PLEASE NO NOT THE HAMMER AGAIN! BOOM YOUR SQUISHED WITH HIS HAMMER SWING ==":
+                character -= Hammer_swing
+                print(f"== {name} DAMN YOUR TAKING A BEATING BETTER END THIS QUICK! ==")
                 print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
                 print("=============================================================================================")
                 time.sleep(second)
-                print("== BUT WE ARE ALMOST THERE I KNOW YOU CAN DO THIS WHAT YOU GOT NEXT? ==")  # TITLE
+                print("== YOU ARE RUNNING OUT OF CHANCES BETTER DO SOMETHING! ==")  # TITLE
                 print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")   # ATTACK LIST
                 print("=============================================================================================")
-        
+            
             while True:
-                gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
-                if gorlock_answer3 == "fireball":
+                gorlock_answer4 = input("Choose Fireball, Zap, Wack: ").lower()
+                if gorlock_answer4 == "fireball":
                     gorlock_the_destroyer -= fireball
-                    print("== SOMEBODY CALL 9-1-1 SOMEBODY KILLED SOMEONE ON THE DANCE FLOOR!... not really but close. ==")
+                    print("== PEEK A BOO THE FIREBALL SEES HIM AND HOPEFULLY WILL KILL HIM!")
                     print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                     print (f'=============================================================================================')
                     break
-                elif gorlock_answer3 == "zap":
+                elif gorlock_answer4 == "zap":
                     gorlock_the_destroyer -= zap
-                    print("== BLINDED BY THE LIGHTTTTSSSSS! THAT WAS A BRIGHT ZAP KEEP IT UP! ==")
+                    print("== ITS SHOCKING YOU MANAGED TO LAND THAT ONE! ==")
                     print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                     print (f'=============================================================================================')
                     break
-                elif gorlock_answer3 == "wack":
+                elif gorlock_answer4 == "wack":
                     gorlock_the_destroyer -= wack
-                    print("== DO YOU THINK THIS IS WACK-A-MOLE OR A LIFE OR DEATH SITUATION IM CONFUSED? ==")
+                    print("== YIKERSS NOT THIS AGAIN *ROLLS EYES* ==")
                     print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                     print (f'=============================================================================================')
                     break
-                elif gorlock_answer3 == "rolling thunder":
+                elif gorlock_answer4 == "rolling thunder":
                     gorlock_the_destroyer -= rolling_thunder
-                    print("== ROLLING THUNDER HAS HIT HIM HARD AND HEAVY LIKE ALWAYS HEHEHE ==")
+                    print("== BOW WOW WOW THATS WHAT THE THUNDER SAYS BOW WOW WOW AND MY HEART KEEPS PUMPING! ==")
                     print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
                     print (f'=============================================================================================')
                     break
-                elif gorlock_answer2 == "rolling thunder" and gorlock_answer3 == "rolling thunder":
+                elif gorlock_answer3 == "rolling thunder" and gorlock_answer4 == "rolling thunder":
                     print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
                     gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
                     print (f'=============================================================================================')
@@ -247,134 +311,70 @@ def goblin_killP3():
                 if character <= 0:
                     show_charcter_Death()
                     break
-                gorlock_response3 = random.choice(gorlock_list3)
-                print (gorlock_response3)
-                print (f'=============================================================================================')
-                
-                if gorlock_response3 == "== HERE IT COMES... HERE IT LANDS AND HE MISSES HAMMER SWING IM HAPPY FOR YOU PAL! ==":
-                    print(f"== {name} YOU KNOW I DIDN'T SEE YOU DODGING THAT ONE BUT YOU DID!==")  # TITLE
-                    print("=============================================================================================")
-                    time.sleep(second)
-                    print("== YOU ARE RUNNING OUT OF CHANCES BETTER DO SOMETHING! ==")  # TITLE
-                    print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")  # ATTACK LIST
-                    print("=============================================================================================")
-
-                if gorlock_response3 == "== PLEASE NO NOT THE HAMMER AGAIN! BOOM YOUR SQUISHED WITH HIS HAMMER SWING ==":
-                    character -= Hammer_swing
-                    print(f"== {name} DAMN YOUR TAKING A BEATING BETTER END THIS QUICK! ==")
-                    print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
-                    print("=============================================================================================")
-                    time.sleep(second)
-                    print("== YOU ARE RUNNING OUT OF CHANCES BETTER DO SOMETHING! ==")  # TITLE
-                    print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")   # ATTACK LIST
-                    print("=============================================================================================")
-                
-                while True:
-                    gorlock_answer4 = input("Choose Fireball, Zap, Wack: ").lower()
-                    if gorlock_answer4 == "fireball":
-                        gorlock_the_destroyer -= fireball
-                        print("== PEEK A BOO THE FIREBALL SEES HIM AND HOPEFULLY WILL KILL HIM!")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer4 == "zap":
-                        gorlock_the_destroyer -= zap
-                        print("== ITS SHOCKING YOU MANAGED TO LAND THAT ONE! ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer4 == "wack":
-                        gorlock_the_destroyer -= wack
-                        print("== YIKERSS NOT THIS AGAIN *ROLLS EYES* ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer4 == "rolling thunder":
-                        gorlock_the_destroyer -= rolling_thunder
-                        print("== BOW WOW WOW THATS WHAT THE THUNDER SAYS BOW WOW WOW AND MY HEART KEEPS PUMPING! ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer3 == "rolling thunder" and gorlock_answer4 == "rolling thunder":
-                        print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
-                        gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
-                        print (f'=============================================================================================')
-                        break
-                    else:
-                        print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
-                        gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
-                        
-                    if gorlock_the_destroyer <= 0:
-                        show_ending_section()
-                        break
-                        
-                    if character <= 0:
-                        show_charcter_Death()
-                        break
-                gorlock_response4 = random.choice(gorlock_list4)
-                print (gorlock_response4)
+            gorlock_response4 = random.choice(gorlock_list4)
+            print (gorlock_response4)
+            print("=============================================================================================")
+            
+            if gorlock_response4 == "== OMG HE IS IN THE AIR... HES FALLING OMG HE MISSED BODY SLAM YAYYYYYY ==":
                 print("=============================================================================================")
-                
-                if gorlock_response4 == "== OMG HE IS IN THE AIR... HES FALLING OMG HE MISSED BODY SLAM YAYYYYYY ==":
-                    print("=============================================================================================")
-                    print("== THANK GOD THAT BIG LARD DIDN'T LAND ON YOUR HEAD! ==") 
-                    time.sleep(second)
-                    print("== THIS FIGHT IS GOING ON A BIT LONGER THAN I ANTICIPATED! ==")  # TITLE
-                    print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")  # ATTACK LIST
-                    print("=============================================================================================")
+                print("== THANK GOD THAT BIG LARD DIDN'T LAND ON YOUR HEAD! ==") 
+                time.sleep(second)
+                print("== THIS FIGHT IS GOING ON A BIT LONGER THAN I ANTICIPATED! ==")  # TITLE
+                print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")  # ATTACK LIST
+                print("=============================================================================================")
 
-                if gorlock_response4 == "==== OMG HE IS IN THE AIR... AND BOOOOOMMM RIGHT IN HIS BELLY BUTTON HE USES BODY SLAM AND LANDS IT! ==":
-                    character -= body_slam
-                    print("== THAT HONESTLY CANT OF BEEN FUN I FEEL FOR YOU :/ ==")
-                    print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
-                    print("=============================================================================================")
-                    time.sleep(second)
-                    print("== THIS FIGHT IS GOING ON A BIT LONGER THAN I ANTICIPATED! ==")  # TITLE
-                    print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")   # ATTACK LIST
-                    print("=============================================================================================")
-        
-                while True:
-                    gorlock_answer5 = input("Choose Fireball, Zap, Wack: ").lower()
-                    if gorlock_answer5 == "fireball":
-                        gorlock_the_destroyer -= fireball
-                        print("== FIRE IN THE HOLE HOPEFULLY NOT HIS THO ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer5 == "zap":
-                        gorlock_the_destroyer -= zap
-                        print("== ZAP YOUR WAY TO VICTORY! I BELIEVE. ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer5 == "wack":
-                        gorlock_the_destroyer -= wack
-                        print("== OKAY IM NOT SAYING ANYTHING ANYMORE..... ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer5 == "rolling thunder":
-                        gorlock_the_destroyer -= rolling_thunder
-                        print("== BOOM POW YOU GOT HIM WITH THAT ONE! PROUD COMMENTATOR :D ==")
-                        print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
-                        print (f'=============================================================================================')
-                        break
-                    elif gorlock_answer4 == "rolling thunder" and gorlock_answer5 == "rolling thunder":
-                        print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
-                        gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
-                        print (f'=============================================================================================')
-                        break
-                    else:
-                        print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
-                        gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
+            if gorlock_response4 == "==== OMG HE IS IN THE AIR... AND BOOOOOMMM RIGHT IN HIS BELLY BUTTON HE USES BODY SLAM AND LANDS IT! ==":
+                character -= body_slam
+                print("== THAT HONESTLY CANT OF BEEN FUN I FEEL FOR YOU :/ ==")
+                print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
+                print("=============================================================================================")
+                time.sleep(second)
+                print("== THIS FIGHT IS GOING ON A BIT LONGER THAN I ANTICIPATED! ==")  # TITLE
+                print("== fireball -30HP == zap -40HP == wack -20HP == Rolling Thunder -50hp ==")   # ATTACK LIST
+                print("=============================================================================================")
+    
+            while True:
+                gorlock_answer5 = input("Choose Fireball, Zap, Wack: ").lower()
+                if gorlock_answer5 == "fireball":
+                    gorlock_the_destroyer -= fireball
+                    print("== FIRE IN THE HOLE HOPEFULLY NOT HIS THO ==")
+                    print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+                    print (f'=============================================================================================')
+                    break
+                elif gorlock_answer5 == "zap":
+                    gorlock_the_destroyer -= zap
+                    print("== ZAP YOUR WAY TO VICTORY! I BELIEVE. ==")
+                    print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+                    print (f'=============================================================================================')
+                    break
+                elif gorlock_answer5 == "wack":
+                    gorlock_the_destroyer -= wack
+                    print("== OKAY IM NOT SAYING ANYTHING ANYMORE..... ==")
+                    print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+                    print (f'=============================================================================================')
+                    break
+                elif gorlock_answer5 == "rolling thunder":
+                    gorlock_the_destroyer -= rolling_thunder
+                    print("== BOOM POW YOU GOT HIM WITH THAT ONE! PROUD COMMENTATOR :D ==")
+                    print (f'GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP]') 
+                    print (f'=============================================================================================')
+                    break
+                elif gorlock_answer4 == "rolling thunder" and gorlock_answer5 == "rolling thunder":
+                    print("== YOU CANT USE THIS RIGHT NOW YOU NEED TO WAIT UNTIL NEXT ROUND TO USE AGAIN! ==")
+                    gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
+                    print (f'=============================================================================================')
+                    break
+                else:
+                    print ("Invalid move! Please choose from: fireball, zap, wack, rolling thunder.")
+                    gorlock_answer3 = input("Choose Fireball, Zap, Wack: ").lower()
+                
+                if gorlock_the_destroyer <= 0:
+                    show_ending_section()
+                    break
                     
-                    if gorlock_the_destroyer <= 0:
-                        show_ending_section()
-                        break
-                        
-                    if character <= 0:
-                        show_charcter_Death()
-                        break
+                if character <= 0:
+                    show_charcter_Death()
+                    break
 
 #================================================================================================================================-#
     
@@ -427,7 +427,7 @@ def first_sectionP2():
             
         if goblin <= 0:
             kill_section()
-            goblin_killP3()
+            goblin_killP2()
             break
 
 
@@ -467,10 +467,10 @@ def first_sectionP2():
                 print (f'=============================================================================================')
             else:
                 print ("Choose Fireball, Zap, Wack: ")
-                answer2 = input("choose fireball, zap or wack  : ")
+
             if goblin <= 0:
                 kill_section()
-                goblin_killP3()  
+                goblin_killP2()  
                 break
 
             time.sleep(second)
@@ -527,7 +527,7 @@ def first_sectionP2():
                     
                 if goblin <= 0:
                     kill_section()
-                    goblin_killP3()  
+                    goblin_killP2()  
                     break
 
                 time.sleep(second)
@@ -580,7 +580,7 @@ def first_sectionP2():
                         
                     if goblin <= 0:
                         kill_section()
-                        goblin_killP3()  
+                        goblin_killP2()  
                         break
                 
                     time.sleep(second)
@@ -612,31 +612,24 @@ def first_sectionP2():
                             time.sleep(half)
                             print (f'== GOOD CHOICE CANT BEAT A GOOD OLD FIREBALL! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         elif answer5 == "zap":
                             goblin -= zap
                             time.sleep(half)
                             print (f'== ZAPPER MC ZAPPINGTON IMA CALL YOU FROM NOW ON! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         elif answer5 == "wack":
                             goblin -= wack
                             time.sleep(half)
                             print (f'== USING WACK IS LIKE PUTTING EGGS IN THE FREEZER..... USELESS! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         else:
                             print("Choose Fireball, Zap, Wack")
                             answer5 = input("choose fireball, zap or wack  : ").lower()
+                            
+                        if goblin <= 0:
+                            kill_section()
+                            goblin_killP2()  
+                            break
                             
                             
     #====================================================================================================================================#

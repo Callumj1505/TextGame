@@ -2,10 +2,14 @@
 import time
 from PIL import Image
 import random
-from game.Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4, buff_list
-from game.GameFunctions import show_ending_section, show_charcter_Death, kill_section
-from game.wizardP3 import first_sectionP3
-from game.wizardP2 import first_sectionP2
+from Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4, buff_list
+from GameFunctions import show_ending_section, show_charcter_Death, kill_section
+from wizardP3 import first_sectionP3
+from wizardP2 import first_sectionP2
+from RogueP1 import roguepath1
+from RogueP2 import roguepath2
+from RogueP3 import roguepath3
+
 
 #character selection
 a = "wizard"
@@ -453,24 +457,37 @@ print (f'=======================================================================
 time.sleep(second)
 while True:
     answer2=input("enter a,b or c  : ").lower()
-    if answer2 == "a": 
+    if answer2 == "a" and answer == "a": 
         print (f'== YOU HAVE ENCOUNTERED A GOBLIN HE SWINGS BUT MISSES WHATS YOUR NEXT MOVE? ==')
         print (f'== fireball -30HP == zap -40HP == wack -20HP')
         print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
         print (f'=============================================================================================')
         break
-    elif answer2 == "b":
+    elif answer2 == "b" and answer == "a": 
         print("== YOU HAVE CHOSE PATH 2 LETS SEE WHAT LURKS AHEAD! ==")
         print (f'=============================================================================================')
         time.sleep(second)
         first_sectionP2()
-        break
-    elif answer2 == "c":
+    elif answer2 == "c" and answer == "a":
         print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE FIND? ==")
         print (f'=============================================================================================')
         time.sleep(second)
         first_sectionP3()
-        break
+    elif answer2 == "a" and answer == "c": 
+        print("== YOU HAVE CHOSE PATH 1 LETS SEE WHAT LURKS AHEAD! ==")
+        print (f'=============================================================================================')
+        time.sleep(second)
+        roguepath1()
+    elif answer2 == "b" and answer == "c":
+        print("== YOU HAVE CHOSE PATH 2 WHAT WILL WE FIND? ==")
+        print (f'=============================================================================================')
+        time.sleep(second)
+        roguepath2()
+    elif answer2 == "c" and answer == "c":
+        print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE ENCOUNTER? ==")
+        print (f'=============================================================================================')
+        time.sleep(second)
+        roguepath3()
     else:
         print ("== PLEASE CHOOSE A,B OR C ==")
         answer2=input("enter a,b or c  : ").lower()

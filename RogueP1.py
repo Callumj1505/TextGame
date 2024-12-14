@@ -166,20 +166,26 @@ def roguepath1():
     
     time.sleep(3)
     while xyrif > 0:
+        #if not checks if it is still false or = None
         if not stored_response:
+            #this assigns last response to random pring response list
             last_response = (random.choice(response_list))
+            #if there is no data stores in stored_response this will run
             print (last_response)
         else:
+            #if there is data in stored_response this runs
             print(stored_response)
+            #resets stores_response to None
             stored_response = None
         print (f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
         print (f'=============================================================================================')   
         answer = input("Choose Attack > ").lower()
         if answer in attack_description:
             print(attack_description[answer])
+            #assigning stored response to last response
             stored_response = last_response
             continue
-        
+        #setting last response to None again.
         last_response = None
         if answer == "a":
             print (f'=============================================================================================')   

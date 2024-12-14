@@ -42,8 +42,8 @@ Hammer_swing = 30
 import time
 from PIL import Image
 import random
-from game.Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4, chest_buffwi
-from game.GameFunctions import show_ending_section, show_charcter_Death, kill_section
+from Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4, chest_buffwi
+from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 
 
 im = Image.open(r'C:\Users\callu\Desktop\coding\r.png')
@@ -622,31 +622,22 @@ def first_sectionP3():
                             time.sleep(half)
                             print (f'== GOOD CHOICE CANT BEAT A GOOD OLD FIREBALL! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         elif answer5 == "zap":
                             goblin -= zap
                             time.sleep(half)
                             print (f'== ZAPPER MC ZAPPINGTON IMA CALL YOU FROM NOW ON! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         elif answer5 == "wack":
                             goblin -= wack
                             time.sleep(half)
                             print (f'== USING WACK IS LIKE PUTTING EGGS IN THE FREEZER..... USELESS! ==') #TITLE
                             print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                            if goblin <= 0:
-                                kill_section()
-                                goblin_killP3()  
-                                break
                         else:
                             print("Choose Fireball, Zap, Wack")
                             answer5 = input("choose fireball, zap or wack  : ").lower()
                             
-                            
+                        if goblin <= 0:
+                            kill_section()
+                            goblin_killP3()  
+                            break
     #====================================================================================================================================#
