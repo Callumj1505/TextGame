@@ -146,7 +146,7 @@ stored_response = None
 
 #First Fight starting
 #==============================================================================================================================#
-def roguepath1():
+def roguepath3():
     global rogue, xyrif, last_response, stored_response
     with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'r') as file:
         name = file.read()
@@ -216,5 +216,5 @@ def roguepath1():
     elif rogue < 0:
         show_charcter_Death()
         
-roguepath1()
+roguepath3()
 

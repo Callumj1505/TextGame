@@ -44,17 +44,55 @@ def xyrif_attack_func():
 def kill_section():
     print("== HE IS DEAD! GOOD JOB ONTO THE NEXT ROOM. ==")
     
+def kill_section3():
+    print("== THEY ARE DEAD! GOOD JOB ONTO THE NEXT ROOM. ==")
+    
 # END OF ROGUE FUNCTIONS!!!
 #==============================================================================================================================#
     
 
+# def EnemyMenu():
+#     from GameClasses import GameVariables
+#     for i, p in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
+#         print (f"== NAME: {i} HEALTH: {p} ==")
+#         continue
+
+def EnemyMenu():
+    from GameClasses import GameVariables
+    for name, health in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
+        print(f"== NAME: {name} HEALTH: {health} ==")
+
     
     
     
+def warrior_p1_Chest():
     
-    
-    
-    
+    from GameClasses import GameVariables, Enemies
+    from Gamelists import chest_buffr
+    import time
+    enem2 = Enemies(0, "", 4, 2)
+    print (f'=============================================================================================')
+    time.sleep(1)
+    print("== YOU HAVE BUMPED INTO A CHEST AND FIND A NEW PEICE OF EQUIPMENT! ==")
+    chest_buff1 = random.choice(chest_buffr)
+    print(chest_buff1)
+    if chest_buff1 == "== YOU HAVE RECIEVED A NEW PEACE OF ARMORE WITH +10 ARMORE! ==":
+        wraith_strike -= 5
+        pulse_blast -= 5
+        call_of_guardians -= 5
+        poke -= 5
+        print("== ALL ENEMY DAMAGE IS DECREASED BY FIVE ==")
+    elif chest_buff1 == "== YOU HAVE RECIEVED NEW SWORD! +10 PHYSICAL DAMAGE! ==":
+        poision_purge += 5
+        infect += 5
+        poision_rain += 5
+        soul_burst += 5
+        print("== ALL OF YOUR ATTACKS HAS GAINED +5 ATTACK")
+    elif chest_buff1 == "== YOU HAVE RECIEVED A ARMORED CHESTPEICE +10 HEALTH ==":
+        rogue += 10
+        print ("== YOU HAVE +10 HEALTH WOOP WOOP == ")
+
+
     
     
     
@@ -73,3 +111,4 @@ def show_charcter_Death():
 def show_ending_section():
     print("== CONGRATULATIONS YOU HAVE COMPLETED MY GAME! THANK YOU FOR PLAYING")
     print("== GAME CREATE: CALLUM JONES")
+    

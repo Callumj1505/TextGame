@@ -114,6 +114,9 @@ option3 = ["TEMPEST GUARDIAN ATTACKS","swing","pulse blast","call of guardians",
 #END OF ROGUE PATH LISTS
 #==============================================================================================================================#
 
+
+
+
 #WIZARD LISTS STARTS NOW
 #================================================================================================================================#
 
@@ -135,10 +138,100 @@ gorlock_list4 = ["== OMG HE IS IN THE AIR... AND BOOOOOMMM RIGHT IN HIS BELLY BU
 chest_buffwi = ["== YOU HAVE RECEIVED A ROBE PEACE WITH +10 ARMOR! ==", "== YOU HAVE RECEIVED A NEW STAFF! +10 PHYSICAL DAMAGE! ==", "== YOU HAVE RECEIVED A NEW SPELLBOOK +10 MAGICAL DAMAGE =="]
 
 
+#START OF WARRARIOR LISTS
+#===================================================================================================================================#
 
 
+shield_bash_response = [
+    "== STRAIGHT INTO ACTION WITH A SHIELD BASH! ==",
+    "== BOOM YOU AINT GOT THAT SHIELD FOR NO REASON! ==",
+    "== USE THAT THANG LIKE YOUR MAMA TAUGHT YOU! ==",
+    "== I NEVER KNEW A ROUND OBJECT COULD BE SO DEADLY ==",
+    "== WE'VE GOT CAPTAIN AMERICA OVER HERE FOLKS ==",
+    "== YOUR DEADLY WITH THAT! GOOD JOB :D =="
+]
 
-#LISTS USED THROUGH ALL PATHS.
+raging_strike_response = [
+    "== GOING IN ABSOLUTLEY FUMING WITH RAGING STRIKE ==",
+    "== I KNOW HE FELT THAT STRIKE! ==",
+    "== GOOD JOB! HITTING THEM HARD KEEP IT UP! ==",
+    "== RAGING SRIKE HAS GOT TO BE MY FAVORITE SO FAR! =="
+    "== KEEP GOING AT THIS PACE AND THEY WILL BE DEAD IN NO TIME =="
+    "== ROLLING LOUD AND PROUD! RAGING STRIKE LADIES AND GENTELMEN! =="
+]
+
+whirlwind_slash_response = [
+    "== A MAN THAT CONTROLS THE WIND! DESTROY HIM. =="
+    "== THE FASTER YOU SPIN THE HARDER YOU HIT =="
+    "== SONIC THE HEDGEHOG INCOMING! =="
+    "== NICE SHOT I BET HE FELT THAT ONE! =="
+    "== CATAGORY 5 HURICANE IMCOMING!"
+    "== JUST KEEP SPINING JUST KEEP SPINNING! =="
+]
+
+# Frostwraith 
+ice_shard_barrage = 2
+frozen_grasp = 4
+blizzard_veil = 3
+# Bloodreaver 
+blood_frenzy = 2
+lifedrain_slash = 4
+bloodlust_roar = 3
+# Voidstalker 
+shadowstep = 2
+ethereal_strike = 4
+void_rift = 3
+# Plaguespitter 
+toxic_spit = 5
+pestilence_cloud = 4
+viral_burst = 6
+
+frostwraith_attack_list = [
+    "== FROST WRAITH HAS USED ICE SHARD BARRAGE AND LANDS IT =="
+    "== FROST WRAITH HAS USED FROZEN GRASP AND LANDS IT =="
+    "== FROST WRAITH HAS USED BLIZZARD VEIL AND LANDS IT =="
+    "== FROST WRAITH USED ICE SHARD BARRAGE AND MISSES IT =="
+    "== FROST WRAITH USED FROZEN GRASP AND MISSES IT =="
+    "== FROST WRAITH USED BLIZZARD VEIL AND MISSES IT =="
+]
+
+bloodreaver_attack_list =[
+    "== BLOOD REAVER HAS USED BLOOD FRENZY AND LANDS IT =="
+    "== BLOOD REAVER HAS USED LIFEDRAIN SLASH AND LANDS IT =="
+    "== BLOOD REAVER HAS USED BLOODLUST ROAR AND LANDS IT =="
+    "== BLOOD REAVER USED BLOOD FRENZY AND MISSES IT =="
+    "== BLOOD REAVER USED LIFEDRAIN SLASH AND MISSES IT =="
+    "== BLOOD REAVER USED BLOOD LUST ROAR AND MISSES IT =="
+]
+
+voidstalker_attack_list = [
+    "== VOID STALKER HAS USED SHADOW STEP AND LANDS IT =="
+    "== VOID STALKER HAS USED ETHERNAL STRIKE AND LANDS IT =="
+    "== VOID STALKER HAS USED VOID RIFT AND LANDS IT =="
+    "== VOID STALKER USED SHADOW STEP AND MISSES IT =="
+    "== VOID STALKER USED ETHERNAL STRIKE AND MISSES IT =="
+    "== VOID STALKER USED VOID RIFT AND MISSES IT =="
+]
+
+plaguespitter_attack_list = [
+    "== PLAGUE SPITTER HAS USED TOXIC SPIT AND LANDS IT =="
+    "== PLAGUE SPITTER HAS USED PESTILANCE CLOUD AND LANDS IT =="
+    "== PLAGUE SPITTER HAS USED VIRAL BURST AND LANDS IT =="
+    "== PLAGUE SPITTER USED TOXIC SPIT AND MISSES IT =="
+    "== PLAGUE SPITTER USED PESTILANCE CLOUD AND MISSES IT =="
+    "== PLAGUE SPITTER USED VIRAL BURST AND MISSES IT =="
+]
+
+response_list3 = [
+    f"== I WANNA SEE SOME SERIOUS S%*T! LETS SEE WHAT YOU CHOOSE NEXT!==",#1
+    f"== GOOD JOB WITH THAT ONE, LETS FINISH HIM OFF SOONER RATHER THAN LATER ==", #2
+    f"== OKAY ONTO THE NEXT ATTACK! BRING IT ON XYRIF ==",#3
+    f"== COMMANDER WE ARE ATTACKING WHAT ARE YOU GOING TO DO! ==", #4
+    f"== SIR WE ARE GOING TO ATTACK PREPARE! ==", #5
+    f"== THERE IS ONLY ONE VICTOR IN THIS REALM LETS HOPE ITS YOU! ==" #6
+]
+
+# LISTS USED THROUGH ALL PATHS.
 #==============================================================================================================================#
 
 #RANDOM BUFF FROM SHRINE
