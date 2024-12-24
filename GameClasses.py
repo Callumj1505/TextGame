@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 class GameVariables:
     # Frostwraith 
@@ -38,6 +39,23 @@ class GameVariables:
     shield_bash = 10
     raging_strike = 15
     whirlwind_slash = 5
+=======
+
+class GameVariables:
+    Cursed_Knight = 100
+
+    cursed_slash = 15
+    wailing_souls = 20
+    unholy_roar = 35
+
+    Warrior = 100
+
+    shield_bash = 20
+    raging_strike = 30
+    whirlwind_slash = 15
+
+
+>>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
 
 class Menu():
     def __init__(self):
@@ -54,7 +72,11 @@ class Menu():
         print("\n--- Difficulty ---")
         print("1. Easy")
         print("2. Medium")
+<<<<<<< HEAD
         print("3. Hard")
+=======
+        print("2. Hard")
+>>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
         
         Choice = input("Choose Option > ")
         if Choice == "1":
@@ -62,6 +84,7 @@ class Menu():
             time.sleep(1.4)
             self.NewGame()
         elif Choice == "2":
+<<<<<<< HEAD
             #frostwraith
             GameVariables.ice_shard_barrage +=2
             GameVariables.frozen_grasp += 2
@@ -82,11 +105,21 @@ class Menu():
             GameVariables.shield_bash -= 5
             GameVariables.raging_strike -= 5
             GameVariables.whirlwind_slash -= 5
+=======
+            GameVariables.cursed_slash -= 5
+            GameVariables.wailing_souls -= 5
+            GameVariables.unholy_roar -= 5
+
+            GameVariables.shield_bash += 2
+            GameVariables.raging_strike += 2
+            GameVariables.whirlwind_slash += 2
+>>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
             self.difficulty = "MEDIUM"
             print("== ENEMY ATTACKS HAVE BEEN INCREASED BY 2! ==\n== YOUR ATTACKS HAVE BEEN DECREASED BY 5! ==")
             time.sleep(1.4)
             self.NewGame()
         elif Choice == "3":
+<<<<<<< HEAD
             #frostwraith
             GameVariables.ice_shard_barrage +=5
             GameVariables.frozen_grasp += 5
@@ -107,12 +140,22 @@ class Menu():
             GameVariables.shield_bash += 7
             GameVariables.raging_strike += 7
             GameVariables.whirlwind_slash = 7
+=======
+            GameVariables.cursed_slash -= 7
+            GameVariables.wailing_souls -= 7
+            GameVariables.unholy_roar -= 7
+
+            GameVariables.shield_bash += 5
+            GameVariables.raging_strike += 5
+            GameVariables.whirlwind_slash = 5
+>>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
             self.difficulty = "HARD"
             print("== ENEMY ATTACKS HAVE BEEN INCREASED BY 5! ==\n== YOUR ATTACKS HAVE BEEN DECREASED BY 7! ==")
             time.sleep(1.4)
             self.NewGame()
             
 
+<<<<<<< HEAD
 class Enemies():
     def __init__(self, health , name, min_enemies, max_enemies):
         self.name = name
@@ -384,6 +427,12 @@ import time
 test.Spawner()
 test.EnemyAttack()
 
+=======
+
+        
+                
+    
+>>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
 def Start():
     menu = Menu()
     print("\n--- Main Menu ---")
