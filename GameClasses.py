@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-import random
+import random, time
+from Gamelists import shield_bash_response ,raging_strike_response, whirlwind_slash_response, frostwraith_attack_list, bloodreaver_attack_list, voidstalker_attack_list, plaguespitter_attack_list, buff_list
+from GameFunctions import kill_section3, show_charcter_Death
 class GameVariables:
     # Frostwraith 
     ice_shard_barrage = 2
@@ -39,23 +40,9 @@ class GameVariables:
     shield_bash = 10
     raging_strike = 15
     whirlwind_slash = 5
-=======
-
-class GameVariables:
-    Cursed_Knight = 100
-
-    cursed_slash = 15
-    wailing_souls = 20
-    unholy_roar = 35
-
-    Warrior = 100
-
-    shield_bash = 20
-    raging_strike = 30
-    whirlwind_slash = 15
+    spectral_blade = 20
 
 
->>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
 
 class Menu():
     def __init__(self):
@@ -68,15 +55,10 @@ class Menu():
             self.Difficulty_Selection()
         
     def Difficulty_Selection(self):
-        import time
         print("\n--- Difficulty ---")
         print("1. Easy")
         print("2. Medium")
-<<<<<<< HEAD
         print("3. Hard")
-=======
-        print("2. Hard")
->>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
         
         Choice = input("Choose Option > ")
         if Choice == "1":
@@ -84,7 +66,6 @@ class Menu():
             time.sleep(1.4)
             self.NewGame()
         elif Choice == "2":
-<<<<<<< HEAD
             #frostwraith
             GameVariables.ice_shard_barrage +=2
             GameVariables.frozen_grasp += 2
@@ -105,21 +86,11 @@ class Menu():
             GameVariables.shield_bash -= 5
             GameVariables.raging_strike -= 5
             GameVariables.whirlwind_slash -= 5
-=======
-            GameVariables.cursed_slash -= 5
-            GameVariables.wailing_souls -= 5
-            GameVariables.unholy_roar -= 5
-
-            GameVariables.shield_bash += 2
-            GameVariables.raging_strike += 2
-            GameVariables.whirlwind_slash += 2
->>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
             self.difficulty = "MEDIUM"
             print("== ENEMY ATTACKS HAVE BEEN INCREASED BY 2! ==\n== YOUR ATTACKS HAVE BEEN DECREASED BY 5! ==")
             time.sleep(1.4)
             self.NewGame()
         elif Choice == "3":
-<<<<<<< HEAD
             #frostwraith
             GameVariables.ice_shard_barrage +=5
             GameVariables.frozen_grasp += 5
@@ -140,22 +111,12 @@ class Menu():
             GameVariables.shield_bash += 7
             GameVariables.raging_strike += 7
             GameVariables.whirlwind_slash = 7
-=======
-            GameVariables.cursed_slash -= 7
-            GameVariables.wailing_souls -= 7
-            GameVariables.unholy_roar -= 7
-
-            GameVariables.shield_bash += 5
-            GameVariables.raging_strike += 5
-            GameVariables.whirlwind_slash = 5
->>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
             self.difficulty = "HARD"
             print("== ENEMY ATTACKS HAVE BEEN INCREASED BY 5! ==\n== YOUR ATTACKS HAVE BEEN DECREASED BY 7! ==")
             time.sleep(1.4)
             self.NewGame()
             
 
-<<<<<<< HEAD
 class Enemies():
     def __init__(self, health , name, min_enemies, max_enemies):
         self.name = name
@@ -163,93 +124,53 @@ class Enemies():
         self.min_enemies = min_enemies
         self.max_enemies = max_enemies
         
-        
     def bossfight(self):
-        import time
-    #     global GameVariables
-    #     from Gamelists import buff_list
-    #     if GameVariables.varnyx_the_shardwoven <= 0:                    
-    #         time.sleep(1)
-    #         #playing boss room
-    #         print ("== ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS! ==")
-    #         print (f'=============================================================================================')
-    #         time.sleep(3)
-    #         #announcing a new attack that the character learns
-    #         print ("== NEW ATTACK LEARNED SOUL BURST ==")
-    #         print ("== IF YOU WOULD LIKE MORE DETAILS ON THE ATTACK TYPE MOVES :) ==")
-    #         time.sleep(1)
-            
-    #         #boss room entrance
-    #         print (f'=============================================================================================')
-    #         print ("== ENTERING THE DUNGEON WITH THE TEMPEST GUARDIAN ==")
-    #         print (f'=============================================================================================')
-                
-    #         time.sleep(1)
-    #         while GameVariables.varnyx_the_shardwoven > 0:
-    #             if not stored_response:
-    #                 last_response = (random.choice(response_list2))
-    #                 print (last_response)
-    #             else:
-    #                 print(stored_response)
-    #                 stored_response = None
-    #             print (f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
-    #             print (f'=============================================================================================')   
-    #             answer = input("Choose Attack > ").lower()
-    #             if answer in attack_description:
-    #                 print(attack_description[answer])
-    #                 stored_response = last_response
-    #                 continue
-            
-    #             last_response = None
-    #             if answer == "a":
-    #                 print (f'=============================================================================================')   
-    #                 print (random.choice(poison_attack_purge))
-    #                 xyrif -= 35
-    #                 print(f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
-    #                 print (f'=============================================================================================')   
-    #                 time.sleep(1)
-    #                 Boss_attack_func()
-    #                 print (f'=============================================================================================')   
-    #             elif answer == "b":
-    #                 print (f'=============================================================================================')  
-    #                 print (random.choice(infect_attack))
-    #                 xyrif -= 20
-    #                 print(f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
-    #                 print (f'=============================================================================================')  
-    #                 time.sleep(1)
-    #                 Boss_attack_func()
-    #                 print (f'=============================================================================================')  
-    #             elif answer == "c":
-    #                 xyrif -= 30
-    #                 print (f'=============================================================================================')  
-    #                 print (random.choice(poison_rain_attack))
-    #                 print(f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
-    #                 print (f'=============================================================================================')  
-    #                 time.sleep(1)
-    #                 Boss_attack_func()
-    #                 print (f'=============================================================================================')
-    #             elif answer == "d":
-    #                 xyrif -= 40
-    #                 print (f'=============================================================================================')  
-    #                 print (random.choice(soul_burst_attack))
-    #                 print(f"== TEMPEST GUARDIAN HAS {tempest_guardian}HP | YOU ARE AT {rogue}HP ==")
-    #                 print (f'=============================================================================================')  
-    #                 time.sleep(1)
-    #                 Boss_attack_func()
-    #                 print (f'=============================================================================================') 
-    #             else:
-    #                 if answer:
-    #                     print (f'=============================================================================================')  
-    #                     print("== INVALID INPUT, PLEASE CHOOSE AN ATTACK! ==")
-    #                     print (f'=============================================================================================')  
-                    
-    #         if tempest_guardian < 0:
-    #             show_ending_section()
-    #         elif rogue < 0:
-    #             show_charcter_Death()
+        from WizardP1 import answer2, charanswer
+        if answer2 == "a" and charanswer == "c":
+            print (f'=============================================================================================')
+            time.sleep(1)
+            print (f'== AMAZING YOU HAVE ENCOUNTERED A SHRINE A BUFF OR DEBUFF COULD BE ADDED LETS HOPE WE GET LUCKY! ==')
+            time.sleep(1)
+            random_buff = random.choice(buff_list)
+            print(random_buff)
+            if random_buff == "+25HP":
+                GameVariables.Warrior += 25
+                print (f"== YOU HAVE RECEIVED A HEALTH BONUS OF 25HP YOUR HP IS NOW {GameVariables.Warrior} ==")
+            elif random_buff == "+10ATK":
+                GameVariables.shield_bash += 5
+                GameVariables.raging_strike += 5
+                GameVariables.whirlwind_slash += 5
+                GameVariables.spectral_blade += 5
+                print ("YOU HAVE GOT AN ATTACK BUFF OF 10 ALL YOUR ATTACKS DO 5 MORE DAMAGE == ")
+            elif random_buff == "-10HP":
+                GameVariables.Warrior -= 10
+                print(f"== YOU HAVE BEEN GIVEN A DEBUFF OF -10HP YOU ARE NOW AT {GameVariables.Warrior}")
+            elif random_buff == "-10ATK":
+                GameVariables.shield_bash -= 5
+                GameVariables.raging_strike -= 5
+                GameVariables.whirlwind_slash -= 5
+                GameVariables.spectral_blade -= 5
+                print("== YOU HAVE BEEN GIVEN A DEBUFF YOU NOW HAVE -10ATK ALL ATTACKS TO 5 LESS DAMAGE ==")
+        elif answer2 == "b" and charanswer == "c":
+            print("== YOU HAVE ENCOUNTERED A HEALING TOKEN +30 HP! ==")
+            character += 30
+            print(f"== YOUR HP IS NOW {rogue} ==")
+            print (f'=============================================================================================')
+            time.sleep(3)
+            print ("== NEW ATTACK LEARNED ROLLING THUNDER")
+            print ("== This attack that stuns the enemy for one round and allows you to land 2 attacks without getting hit. You can only use this once every other round.")
+            time.sleep(1)
+            #playing boss room
+            print ("== ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS! ==")
+            print (f'=============================================================================================')
+            time.sleep(3)
+            #announcing a new attack that the charcter learns
+            print ("== NEW ATTACK LEARNED SOUL BURST ==")
+            print ("== IF YOU WOULD LIKE MORE DETAILS ON THE ATTACK TYPE MOVES :) ==")
+            time.sleep(1)
+        elif answer2 == "c" and charanswer == "c":
     
     def enemys_attack_func(self):
-        from Gamelists import frostwraith_attack_list, bloodreaver_attack_list, voidstalker_attack_list, plaguespitter_attack_list
         which_enemy_attacks = random.choice(GameVariables.chosen_names)
         print(f"== {which_enemy_attacks} IS ATTACKING")
         if which_enemy_attacks == "FROST WRAITH":
@@ -268,9 +189,9 @@ class Enemies():
             print(bloodreaver_attack)
             if bloodreaver_attack == "== BLOOD REAVER HAS USED BLOOD FRENZY AND LANDS IT ==":
                 GameVariables.Warrior -= GameVariables.blood_frenzy
-            elif bloodreaver_attack == "== BLOOD REAVER HAS USED BLOOD FRENZY AND LANDS IT ==":
+            elif bloodreaver_attack == "== BLOOD REAVER HAS USED LIFEDRAIN SLASH AND LANDS IT ==":
                 GameVariables.Warrior -= GameVariables.lifedrain_slash
-            elif bloodreaver_attack == "== BLOOD REAVER HAS USED BLOOD FRENZY AND LANDS IT ==":
+            elif bloodreaver_attack == "== BLOOD REAVER HAS USED BLOODLUST ROAR AND LANDS IT ==":
                 GameVariables.Warrior -= GameVariables.bloodlust_roar
             else:
                 print("== LETS ALL BE GREATFULL HE MISSED! ==")
@@ -288,7 +209,7 @@ class Enemies():
         elif which_enemy_attacks == "PLAGUE SPITTER":
             plaguespitter_attack = random.choice(plaguespitter_attack_list)
             print(plaguespitter_attack)
-            if plaguespitter_attack == "== PLAGUE SPITTER HAS USED TOXIC SPIT AND LANDS IT ==":\
+            if plaguespitter_attack == "== PLAGUE SPITTER HAS USED TOXIC SPIT AND LANDS IT ==":
                 GameVariables.Warrior -= GameVariables.toxic_spit
             elif plaguespitter_attack == "== PLAGUE SPITTER HAS USED PESTILANCE CLOUD AND LANDS IT ==":
                 GameVariables.Warrior -= GameVariables.pestilence_cloud
@@ -298,141 +219,148 @@ class Enemies():
                 print("== WE CAN ALL BE GREATFUL HE MISSED! ==")
                 
     def Spawner(self):
-        import random
         print (f"== {GameVariables.enemy_count} ENEMIES HAS SPAWNED! ==")
         for _ in range(GameVariables.enemy_count):
             self.name = random.choice(GameVariables.name_list)
             GameVariables.name_list.remove(self.name)
             GameVariables.chosen_names.append(self.name)
             self.health = random.randint(20, 40)
-            creationtext = f"== NAME: {self.name} HP: {self.health} =="
+            creationtext = f"== NAME: {self.name} HEALTH: {self.health} =="
             GameVariables.chosen_hp.append(self.health)
-            while GameVariables.enemycreation != GameVariables.enemy_count:
-                print(creationtext)
-                GameVariables.enemycreation.append(creationtext)
-            else:
-                if GameVariables.enemycreation == GameVariables.enemy_count:
-                    continue
-
+            GameVariables.enemycreation.append(creationtext)
+            
+    def EnemyMenu(self):
+        for name, health in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
+            print(f"== NAME: {name} HEALTH: {health} ==")
+            continue
+        
     def EnemyAttack(self):
-        from Gamelists import shield_bash_response ,raging_strike_response, whirlwind_slash_response
-        import random
-        from GameFunctions import kill_section3, show_charcter_Death, EnemyMenu
-        print("== STARTING ROUND ==")
         print("== WHO DO YOU WANT TO ATTACK ==")
-        while any(hp > 0 for hp in GameVariables.chosen_hp):
-            EnemyMenu()
+        while True:
+            self.EnemyMenu()
+            print(f"== WARRIOR == HP: {GameVariables.Warrior} ==")
             answer = input("Choose Enemy > ").lower()
             if answer == "1":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[0]} ==")
                 print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[0]} HP: {GameVariables.chosen_hp[0]} ==")
-                print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
+                print(f"== CHOOSE SHIELD BASH - {GameVariables.shield_bash}DMG - RAGING STRIKE {GameVariables.shield_bash}DMG - WHIRLWIND STRIKE {GameVariables.whirlwind_slash}DMG ==")
                 attack_answer = input("Choose Atack > ")
                 if attack_answer == "shield bash":
-                    GameVariables.chosen_hp[0] -= 10
-                    shield_bash_print = random.shuffle(shield_bash_response)
+                    GameVariables.chosen_hp[0] -= GameVariables.shield_bash
+                    shield_bash_print = random.choice(shield_bash_response)
                     print(shield_bash_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "raging strike":
-                    GameVariables.chosen_hp[0] -= 15
-                    raging_strike_print = random.shuffle(raging_strike_response)
+                    GameVariables.chosen_hp[0] -= GameVariables.raging_strike
+                    raging_strike_print = random.choice(raging_strike_response)
                     print(raging_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "whirlwind strike":
-                    GameVariables.chosen_hp[0] -= 5
-                    whirlwind_strike_print = random.shuffle(whirlwind_slash_response)
+                    GameVariables.chosen_hp[0] -= GameVariables.whirlwind_slash
+                    whirlwind_strike_print = random.choice(whirlwind_slash_response)
                     print(whirlwind_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
+                    attack_answer = input("Choose Atack > ")
             elif answer == "2":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[1]} ==")
                 print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[1]} HP: {GameVariables.chosen_hp[1]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 attack_answer = input("Choose Atack > ")
                 if attack_answer == "shield bash":
-                    GameVariables.chosen_hp[1] -= 10
-                    shield_bash_print = random.shuffle(shield_bash_response)
+                    GameVariables.chosen_hp[1] -= GameVariables.shield_bash
                     print(shield_bash_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "raging strike":
-                    GameVariables.chosen_hp[1] -= 15
-                    raging_strike_print = random.shuffle(raging_strike_response)
+                    GameVariables.chosen_hp[1] -= GameVariables.raging_strike
+                    raging_strike_print = random.choice(raging_strike_response)
                     print(raging_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "whirlwind strike":
-                    GameVariables.chosen_hp[1] -= 5
-                    whirlwind_strike_print = random.shuffle(whirlwind_slash_response)
+                    GameVariables.chosen_hp[1] -= GameVariables.whirlwind_slash
+                    whirlwind_strike_print = random.choice(whirlwind_slash_response)
                     print(whirlwind_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
+                    attack_answer = input("Choose Atack > ")
             elif answer == "3":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[2]} ==")
                 print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[2]} HP: {GameVariables.chosen_hp[2]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 attack_answer = input("Choose Atack > ")
                 if attack_answer == "shield bash":
-                    GameVariables.chosen_hp[2] -= 10
-                    shield_bash_print = random.shuffle(shield_bash_response)
+                    GameVariables.chosen_hp[2] -= GameVariables.shield_bash
+                    shield_bash_print = random.choice(shield_bash_response)
                     print(shield_bash_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "raging strike":
-                    GameVariables.chosen_hp[2] -= 15
-                    raging_strike_print = random.shuffle(raging_strike_response)
+                    GameVariables.chosen_hp[2] -= GameVariables.raging_strike
+                    raging_strike_print = random.choice(raging_strike_response)
                     print(raging_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "whirlwind strike":
-                    GameVariables.chosen_hp[2] -= 5
-                    whirlwind_strike_print = random.shuffle(whirlwind_slash_response)
+                    GameVariables.chosen_hp[2] -= GameVariables.whirlwind_slash
+                    whirlwind_strike_print = random.choice(whirlwind_slash_response)
                     print(whirlwind_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
+                    attack_answer = input("Choose Atack > ")
             elif answer == "4":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[3]} ==")
                 print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[3]} HP: {GameVariables.chosen_hp[3]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 attack_answer = input("Choose Atack > ")
                 if attack_answer == "shield bash":
-                    GameVariables.chosen_hp[3] -= 10
-                    shield_bash_print = random.shuffle(shield_bash_response)
+                    GameVariables.chosen_hp[3] -= GameVariables.shield_bash
+                    shield_bash_print = random.choice(shield_bash_response)
                     print(shield_bash_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "raging strike":
-                    GameVariables.chosen_hp[3] -= 15
-                    raging_strike_print = random.shuffle(raging_strike_response)
+                    GameVariables.chosen_hp[3] -= GameVariables.raging_strike
+                    raging_strike_print = random.choice(raging_strike_response)
                     print(raging_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 elif attack_answer == "whirlwind strike":
-                    GameVariables.chosen_hp[3] -= 5
-                    whirlwind_strike_print = random.shuffle(whirlwind_slash_response)
+                    GameVariables.chosen_hp[3] -= GameVariables.whirlwind_slash
+                    whirlwind_strike_print = random.choice(whirlwind_slash_response)
                     print(whirlwind_strike_print)
+                    self.enemys_attack_func()
                     print("== WHO DO YOU CHOOSE TO ATTACK NEXT! ==")
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
+                    attack_answer = input("Choose Atack > ")
             else:
                 print("== PLEASE TYPE A VALID INPUT :) ==")
-                        
-            if not all(x == 0 for x in GameVariables.chosen_hp):
+                answer = input("Choose Enemy > ").lower()
+                
+            if all(hp <= 0 for hp in GameVariables.chosen_hp):
                 kill_section3()
+                self.bossfight()
                 break
             elif GameVariables.Warrior <= 0:
                 show_charcter_Death()
                 break
-                        
-            
-test = Enemies(0, "", 4, 2)
-import time
-test.Spawner()
-test.EnemyAttack()
+                    
+if __name__ == "__main__":
+    test = Enemies(0, "", 4, 2)
+    test.Spawner()
+    test.EnemyAttack()
 
-=======
 
-        
-                
-    
->>>>>>> efa5200bb4af01c5210962b07251f6ab08732c21
 def Start():
     menu = Menu()
     print("\n--- Main Menu ---")

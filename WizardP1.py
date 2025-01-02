@@ -420,8 +420,8 @@ print (f'a' + f'-'+(a), f'b'+f'-'+(b), f'c'+f'-'+(c))
 
 
 #depending what character is chose it shows you a map with your characters stats and the path options.
-answer=input("enter A, B or C  : ").lower()
-if answer == "a":
+charanswer=input("enter A, B or C  : ").lower()
+if charanswer == "a":
     print (f'=============================================================================================')    
     print (f'Healthy choice strong for his spells and powers you can be sure to stand your are ground as long as you keep your distance :)')
     print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
@@ -457,33 +457,33 @@ print (f'=======================================================================
 time.sleep(second)
 while True:
     answer2=input("enter a,b or c  : ").lower()
-    if answer2 == "a" and answer == "a": 
+    if answer2 == "a" and charanswer == "a": 
         print (f'== YOU HAVE ENCOUNTERED A GOBLIN HE SWINGS BUT MISSES WHATS YOUR NEXT MOVE? ==')
         print (f'== fireball -30HP == zap -40HP == wack -20HP')
         print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
         print (f'=============================================================================================')
         break
-    elif answer2 == "b" and answer == "a": 
+    elif answer2 == "b" and charanswer == "a": 
         print("== YOU HAVE CHOSE PATH 2 LETS SEE WHAT LURKS AHEAD! ==")
         print (f'=============================================================================================')
         time.sleep(second)
         first_sectionP2()
-    elif answer2 == "c" and answer == "a":
+    elif answer2 == "c" and charanswer == "a":
         print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE FIND? ==")
         print (f'=============================================================================================')
         time.sleep(second)
         first_sectionP3()
-    elif answer2 == "a" and answer == "c": 
+    elif answer2 == "a" and charanswer == "b": 
         print("== YOU HAVE CHOSE PATH 1 LETS SEE WHAT LURKS AHEAD! ==")
         print (f'=============================================================================================')
         time.sleep(second)
         roguepath1()
-    elif answer2 == "b" and answer == "c":
+    elif answer2 == "b" and charanswer == "b":
         print("== YOU HAVE CHOSE PATH 2 WHAT WILL WE FIND? ==")
         print (f'=============================================================================================')
         time.sleep(second)
         roguepath2()
-    elif answer2 == "c" and answer == "c":
+    elif answer2 == "c" and charanswer == "b":
         print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE ENCOUNTER? ==")
         print (f'=============================================================================================')
         time.sleep(second)

@@ -38,21 +38,18 @@ def boss_fight():
         time.sleep(1)
         print (f'=============================================================================================')
         print("== YOU HAVE ENCOUNTERED A HEALING TOKEN +30 HP! ==")
-        character += 30
+        rogue += 30
         print(f"== YOUR HP IS NOW {rogue} ==")
-        print (f'=============================================================================================')
-        time.sleep(3)
-        print ("== NEW ATTACK LEARNED ROLLING THUNDER")
-        print ("== This attack that stuns the enemy for one round and allows you to land 2 attacks without getting hit. You can only use this once every other round.")
-        time.sleep(1)
-        #playing boss room
-        print ("== ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS! ==")
         print (f'=============================================================================================')
         time.sleep(3)
         #announcing a new attack that the charcter learns
         print ("== NEW ATTACK LEARNED SOUL BURST ==")
-        print ("== IF YOU WOULD LIKE MORE DETAILS ON THE ATTACK TYPE MOVES :) ==")
+        print ("== IF YOU WOULD LIKE MORE DETAILS ON THE ATTACK TYPE 'MOVES' :) ==")
         time.sleep(1)
+        #playing boss room
+        print ("== ONTO THE FINAL BOSS LEVEL ALL YOUR TRAINING HAS LEAD UP TO THIS! ==")
+        print (f'=============================================================================================')
+        
         
         #boss room entrance
         print (f'=============================================================================================')

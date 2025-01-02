@@ -49,28 +49,9 @@ def kill_section3():
     
 # END OF ROGUE FUNCTIONS!!!
 #==============================================================================================================================#
-    
-
-# def EnemyMenu():
-#     from GameClasses import GameVariables
-#     for i, p in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
-#         print (f"== NAME: {i} HEALTH: {p} ==")
-#         continue
-
-def EnemyMenu():
-    from GameClasses import GameVariables
-    for name, health in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
-        print(f"== NAME: {name} HEALTH: {health} ==")
-
-    
-    
-    
 def warrior_p1_Chest():
-    
-    from GameClasses import GameVariables, Enemies
     from Gamelists import chest_buffr
     import time
-    enem2 = Enemies(0, "", 4, 2)
     print (f'=============================================================================================')
     time.sleep(1)
     print("== YOU HAVE BUMPED INTO A CHEST AND FIND A NEW PEICE OF EQUIPMENT! ==")
