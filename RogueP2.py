@@ -195,5 +195,5 @@ def roguepath2():
     elif rogue < 0:
         show_charcter_Death()
         
-roguepath1()
+roguepath2()
 

@@ -50,6 +50,7 @@ def kill_section3():
 # END OF ROGUE FUNCTIONS!!!
 #==============================================================================================================================#
 def warrior_p1_Chest():
+
     from Gamelists import chest_buffr
     import time
     print (f'=============================================================================================')
@@ -72,11 +73,6 @@ def warrior_p1_Chest():
     elif chest_buff1 == "== YOU HAVE RECIEVED A ARMORED CHESTPEICE +10 HEALTH ==":
         rogue += 10
         print ("== YOU HAVE +10 HEALTH WOOP WOOP == ")
-
-
-    
-    
-    
 #ALL PATH FUNCTIONS.
 #==============================================================================================================================#
 

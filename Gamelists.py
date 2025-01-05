@@ -142,6 +142,15 @@ chest_buffwi = ["== YOU HAVE RECEIVED A ROBE PEACE WITH +10 ARMOR! ==", "== YOU 
 #===================================================================================================================================#
 
 
+spectral_blade_response = [
+    "== SPECTRAL BLADE INITIATED...... BEEP....BOOP ==",
+    "== I DIDN'T KNOW YOU HAD IT IN YOU! ==",
+    "== WEEEEEE ARE THE CHAMPIONS MY FRIEND! ==",
+    "== THIS IS A GOOD FARTHER SON MOMENT BUT IM NOT YOUR DAD AND YOUR NOT MY SON. GOOD JOB KEEP IT UP! ==",
+    "== I WOULD SAY I AM IMPRESSED BUT I AM NOT ==",
+    "== KEEP IT UP! ==",
+]
+
 shield_bash_response = [
     "== STRAIGHT INTO ACTION WITH A SHIELD BASH! ==",
     "== BOOM YOU AINT GOT THAT SHIELD FOR NO REASON! ==",
@@ -168,23 +177,17 @@ whirlwind_slash_response = [
     "== CATAGORY 5 HURICANE IMCOMING! ==",
     "== JUST KEEP SPINING JUST KEEP SPINNING! ==",
 ]
-
-# Frostwraith 
-ice_shard_barrage = 2
-frozen_grasp = 4
-blizzard_veil = 3
-# Bloodreaver 
-blood_frenzy = 2
-lifedrain_slash = 4
-bloodlust_roar = 3
-# Voidstalker 
-shadowstep = 2
-ethereal_strike = 4
-void_rift = 3
-# Plaguespitter 
-toxic_spit = 5
-pestilence_cloud = 4
-viral_burst = 6
+    
+varnyx_attack_list = [
+    "== VARNYX THE SHARDWOVEN HAS USED FRACTURED RIFT AND LANDS IT ==",
+    "== VARNYX THE SHARDWOVEN HAS USED PRISMATIC OVERLOAD AND LANDS IT ==",
+    "== VARNYX THE SHARDWOVEN HAS USED SHARDSTORM BARRAGE AND LANDS IT ==",
+    "== VARNYX THE SHARDWOVEN HAS USED RESONANT COLLAPSE AND LANDS IT ==",
+    "== VARNYX THE SHARDWOVEN USED FRACTURED RIFT AND MISSES IT ==",
+    "== VARNYX THE SHARDWOVEN USED PRISMATIC OVERLOAD AND MISSES IT ==",
+    "== VARNYX THE SHARDWOVEN USED SHARDSTORM BARRAGE AND MISSES IT ==",
+    "== VARNYX THE SHARDWOVEN USED RESONANT COLLAPSE AND MISSES IT =="
+]
 
 frostwraith_attack_list = [
     "== FROST WRAITH HAS USED ICE SHARD BARRAGE AND LANDS IT ==",
@@ -244,3 +247,32 @@ chest_buffw = [
 #RANDOM BUFF FROM SHRINE
 #==============================================================================================================================#
 buff_list = ["+25HP", "+10ATK", "-10HP", "-10ATK"]
+
+attack_list1 = ["FROST WRAITH      ","Ice Shard Barrage ", "Frozen Grasp      ", "Blizzard Veil     "]
+attack_list2 = ["BLOOD REAVER    ","Blood Frenzy    ", "Lifedrain Slash ", "Bloodlst Roar   "]
+attack_list3 = ["VOID STALKER    ","Shadow Step     ", "ethernal strike ", "void rift       "]
+attack_list4 = ["PLAGUE SPITTER    ","Toxic Spit        ", "Pestilence Cloud  ", "Viral Burst       "]
+attack_list6 = ["YOUR MOVES","Shield Bash", "Ragin Strike", "Whirlind Slash", "Spectral Blade" ]
+attack_list5 = ["VARNYX THE DESTROER","Fractured Rift","Prismatic Overload","Resonance Collapse"]
+
+attack_description2 = {
+    "ice shard barrage":"This attack involves the user flash-freezing chunks of ice and hurling them at the target. It’s a rapid, multi-hit move that can overwhelm opponents with a barrage of ice shards",
+    "frozen grasp":"This spell envelops a target in harsh winter cold, leaving them frozen for a time. It’s a powerful frost spell that immobilizes the target, making them vulnerable to further attacks",
+    "blizzard veil":"This move unleashes a blizzard that strikes opponents with icy winds, potentially freezing them solid. It’s a devastating attack that can cover a wide area and hinder the movement of enemies",
+    "blood frenzy":"This attack drives the user into a bloodlust frenzy, granting advantage on melee attacks against enemies that are not at full health. It's a powerful move that can turn the tide of battle when used strategically.",
+    "lifedrain slash":": This attack delivers a precise and powerful slash infused with dark energy, causing the target to suffer lingering pain and reduced physical abilities. The wound inflicted by this slash continuously saps the target's strength, making them weaker over time and leaving them vulnerable to subsequent attacks.",
+    "bloodlust roar":"This move unleashes a powerful roar that increases the user's attack power and may cause enemies to become enraged or fearful, potentially lowering their defenses",
+    "shadow step":"This attack allows the user to move swiftly and silently through the shadows, reappearing behind their target with a deadly strike. It's a teleportation move that can catch enemies off guard and is perfect for positioning or escaping danger",
+    "ethernal strike":"This attack delivers a powerful blow imbued with otherworldly energy. It strikes with such force that it disrupts the target's very essence, causing lasting damage that transcends physical wounds",
+    "void rift":"This move tears open a rift to the void, unleashing dark, chaotic energy that can engulf and damage all enemies within its vicinity. The attack distorts reality itself, making it a devastating area-of-effect move.",
+    "toxic spit":"This attack involves the user spitting a corrosive, toxic substance at the target. The venom burns and poisons the target on contact, causing continuous damage over time and weakening their defenses.",
+    "pestilence cloud":"This move creates a swirling cloud of noxious gas that spreads out and envelops enemies. The toxic miasma not only deals damage but also inflicts various debilitating effects, such as slowing movement and reducing attack power.",
+    "viral burst":"This attack releases a concentrated burst of viral energy, infecting all nearby enemies with a fast-spreading disease. The infection rapidly depletes the health of those affected and has a chance to spread to others who come into contact with the infected.",
+    "fractured rift":"This attack creates a tear in the fabric of reality, causing chaotic energy to surge through the rift and damage enemies caught in its wake. The fracture destabilizes the area, leading to unpredictable and powerful bursts of energy that can severely harm anyone nearby.",
+    "prismatic overload":"This move harnesses the full spectrum of light, channeling prismatic energy into a devastating attack. The overloaded energy refracts and explodes upon impact, blinding and disorienting enemies while dealing significant damage across a wide area.",
+    "resonance collapse":"This attack generates powerful resonant waves that cause a catastrophic collapse in the target’s structure. The waves build up a harmonic frequency that leads to a sudden and destructive implosion, dealing heavy damage to all affected enemies and leaving them vulnerable to further attacks.",
+    "shield bash":"This attack involves the user forcefully striking the target with their shield. The impact can stun and stagger the opponent, leaving them momentarily disoriented and vulnerable to follow-up attacks.",
+    "raging strike":"This move channels the user's anger into a powerful melee strike. Fueled by rage, the attack delivers a devastating blow that can break through defenses and deal significant damage.",
+    "whirlwind slash":"This attack sees the user spinning with their weapon, creating a deadly whirlwind of slashes. The move hits all nearby enemies, making it effective for crowd control and dealing multiple hits in quick succession.",
+    "spectral blade":"This attack summons a blade of ethereal energy that can cut through both physical and magical defenses. The spectral blade strikes with a ghostly precision, leaving a chilling effect on the target.",
+}
