@@ -194,6 +194,7 @@ def roguepath2():
         boss_fight()
     elif rogue < 0:
         show_charcter_Death()
-        
-roguepath2()
+
+if __name__ == "__main__":
+    roguepath2()
 

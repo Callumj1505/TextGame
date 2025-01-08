@@ -49,6 +49,7 @@ class GameVariables:
 class Menu():
     def __init__(self):
         self.difficulty = None
+    #this handles when the game starts
     def NewGame(self):
         if self.difficulty is not None:
             print(F"== STARTING GAME IN {self.difficulty} MODE ==")
@@ -58,12 +59,12 @@ class Menu():
         else:
             print("== PLEASE CHOOSE A DIFFICULTY ==")
             self.Difficulty_Selection()
-            
+    #scoreboard for players to see there score
     def Scoreboard(self):
             with open(r'C:\Users\callu\Desktop\coding\game\score.txt', 'r') as file:
                 score = file.read()
                 print(score)
-
+    #difficulty selection for the player
     def Difficulty_Selection(self):
         print("\n--- Difficulty ---")
         print("1. Easy")
@@ -126,13 +127,14 @@ class Menu():
             time.sleep(1.4)
             self.NewGame()
 
+#this class handles the enemies and the boss fight
 class Enemies():
     def __init__(self, health, name, min_enemies, max_enemies):
         self.name = name
         self.health = health
         self.min_enemies = min_enemies
         self.max_enemies = max_enemies
-
+#this function handles the boss fight
     def bossfight(self):
         from WizardP1 import answer2, charanswer
         if answer2 == "a" and charanswer == "c":
@@ -264,7 +266,7 @@ class Enemies():
                 show_charcter_Death()
                 print (f'=============================================================================================')
                 break
-
+#this function handles the enemies attacks
     def Boss_Attack(self):
         print (f'=============================================================================================')
         print("== VARNYX THE SHARDWOVEN IS ATTACKING ==")
@@ -285,7 +287,7 @@ class Enemies():
             print(f"== VARNYX HP: {GameVariables.varnyx_the_shardwoven} WARRIOR HP: {GameVariables.Warrior} ==")
         else:
             print("== VARNYX THE SHARDWOVEN MISSED HIS ATTACK ==")
-
+#this function handles the enemies attacks
     def enemys_attack_func(self):
         which_enemy_attacks = random.choice(GameVariables.chosen_names)
         print (f'=============================================================================================')
@@ -335,7 +337,7 @@ class Enemies():
                 GameVariables.Warrior -= GameVariables.viral_burst
             else:
                 print("== WE CAN ALL BE GREATFUL HE MISSED! ==")
-
+#this function handles the enemies spawning
     def Spawner(self):
         print (f"=== {GameVariables.enemy_count} ENEMIES HAS SPAWNED! ====")
         for _ in range(GameVariables.enemy_count):
@@ -346,7 +348,7 @@ class Enemies():
             creationtext = f"== NAME: {self.name} HEALTH: {self.health} =="
             GameVariables.chosen_hp.append(self.health)
             GameVariables.enemycreation.append(creationtext)
-
+#this function handles the enemies menu
     def EnemyMenu(self):
         indices_to_remove = [i for i, hp in enumerate(GameVariables.chosen_hp) if hp <= 0]
         for index in sorted(indices_to_remove, reverse=True):
@@ -356,7 +358,7 @@ class Enemies():
         for name, health in zip(GameVariables.chosen_names, GameVariables.chosen_hp):
             print(f"== NAME: {name} HEALTH: {health} ==")
             continue
-
+#this function handles the your attacks on the enmies.
     def EnemyAttack(self):
         print (f'=============================================================================================')
         print (Fore.CYAN + f"== TO CHOOSE ATTACK PLEASE TYPE 'A' - 'B' - 'C' ==" + Style.RESET_ALL)
@@ -561,12 +563,7 @@ class Enemies():
                 show_charcter_Death()
                 break
 
-if __name__ == "__main__":
-    test = Enemies(0, "", 4, 2)
-    test.Spawner()
-    test.EnemyAttack()
-    test.bossfight()
-
+#this function starts the game, and all other menu functions.
 def Start():
     menu = Menu()
     print("\n--- Main Menu ---")

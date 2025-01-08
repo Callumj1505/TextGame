@@ -9,6 +9,7 @@ from wizardP2 import first_sectionP2
 from RogueP1 import roguepath1
 from RogueP2 import roguepath2
 from RogueP3 import roguepath3
+from WarriorP1 import warriorpaths
 
 
 #character selection
@@ -36,9 +37,9 @@ slap = 25
 bite = 20
 
 #map image to display based on the character you choose
-im = Image.open(r'C:\Users\callu\Desktop\coding\r.png')
-im2 = Image.open(r'C:\Users\callu\Desktop\coding\wi.png')
-im3 = Image.open(r'C:\Users\callu\Desktop\coding\w.png')
+im = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\r.png')
+im2 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\wi.png')
+im3 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\w.png')
 
 #seconds for time.sleep
 second3 = 3
@@ -49,6 +50,7 @@ half = 0.4
 #================================================================================================================================-#
 #when goblin dies the shrine section runs with this function
 def goblin_kill():
+    global name
     global gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4
     #boss hp
     gorlock_the_destroyer = 100
@@ -66,7 +68,7 @@ def goblin_kill():
     Hammer_swing = 30
     #makes the charcter health global. to be able to be used in functions.
     global character
-    #if the goblins hp is 0 or less this is the shrine room that exicutes 
+    #if the goblins hp is 0 or less this is the shrine room that exicutes.
     if goblin <= 0:
         print (f'=============================================================================================')
         time.sleep(second)
@@ -405,329 +407,357 @@ def goblin_kill():
                         break
 
 #================================================================================================================================-#
+def main():
+    #welcoming you to the game
+    print (f'=============================================================================================')   
 
-#welcoming you to the game
-print (f'=============================================================================================')   
+    print (f'== WELCOME TO THE CHOSEN WARRIOR ==')
 
-print (f'== WELCOME TO THE CHOSEN WARRIOR ==')
-
-print (f'=============================================================================================')    
-time.sleep(second)
-#selecting character from a choice of wizard, rogue, warrior
-print (f'== CHOOSE CHARACTER ==')
-
-print (f'a' + f'-'+(a), f'b'+f'-'+(b), f'c'+f'-'+(c))
-
-
-#depending what character is chose it shows you a map with your characters stats and the path options.
-charanswer=input("enter A, B or C  : ").lower()
-if charanswer == "a":
     print (f'=============================================================================================')    
-    print (f'Healthy choice strong for his spells and powers you can be sure to stand your are ground as long as you keep your distance :)')
-    print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
-    print (f'=============================================================================================')    
-    time.sleep(second3)
-    im.show()  
-#choosing username and then it get saved into a folder called usernames to be able to be used across work sheets.
-print (f'== TIME TO CHOOSE YOUR USERNAME ==')
-name = input("type your username  : ").upper()
-time.sleep(second)
+    time.sleep(second)
+    #selecting character from a choice of wizard, rogue, warrior
+    print (f'== CHOOSE CHARACTER ==')
 
-with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'w') as file:
-    file.write(name)
-print (f'=============================================================================================')   
-
-print (f'== NICE TO MEET YOU {name} ==')
-time.sleep(second)
-print (f'=============================================================================================')   
+    print (f'a' + f'-'+(a), f'b'+f'-'+(b), f'c'+f'-'+(c))
 
 
-print(f'== OK {name} ITS TIME TO PLAY THE GAME OF DIRECTIONS AND CHOICES')
-
-print (f'=============================================================================================')
-
-time.sleep(second)
-#choosing a path
-print(f'== WHICH WAY WOULD YOU LIKE TO GO? ==')
-#path selection options.
-print (f'a' + f'-'+(path1), f'b'+f'-'+(path2), f'c'+f'-'+(path3))
-
-print (f'=============================================================================================')
-#first encounter/attack with the goblin.
-time.sleep(second)
-while True:
-    answer2=input("enter a,b or c  : ").lower()
-    if answer2 == "a" and charanswer == "a": 
-        print (f'== YOU HAVE ENCOUNTERED A GOBLIN HE SWINGS BUT MISSES WHATS YOUR NEXT MOVE? ==')
-        print (f'== fireball -30HP == zap -40HP == wack -20HP')
-        print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
+    #depending what character is chose it shows you a map with your characters stats and the path options.
+    charanswer=input("enter A, B or C  : ").lower()
+    if charanswer == "a":
+        print (f'=============================================================================================')    
+        print (f'Healthy choice strong for his spells and powers you can be sure to stand your are ground as long as you keep your distance :)')
+        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
+        print (f'=============================================================================================')    
+        time.sleep(second3)
+        im.show() 
+    elif charanswer == "b":
+        print (f'=============================================================================================')    
+        print (f'Rogue: Agile and stealthy, excels in quick attacks and evasion. Use your speed to outmaneuver enemies.')
+        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
+        print (f'=============================================================================================') 
+        time.sleep(second3)
+        im2.show()
+    elif charanswer == "c":
+        print (f'=============================================================================================')    
+        print (f'Warrior: Strong and resilient, capable of withstanding heavy attacks. Use your strength to overpower foes.')
+        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
         print (f'=============================================================================================')
-        break
-    elif answer2 == "b" and charanswer == "a": 
-        print("== YOU HAVE CHOSE PATH 2 LETS SEE WHAT LURKS AHEAD! ==")
-        print (f'=============================================================================================')
-        time.sleep(second)
-        first_sectionP2()
-    elif answer2 == "c" and charanswer == "a":
-        print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE FIND? ==")
-        print (f'=============================================================================================')
-        time.sleep(second)
-        first_sectionP3()
-    elif answer2 == "a" and charanswer == "b": 
-        print("== YOU HAVE CHOSE PATH 1 LETS SEE WHAT LURKS AHEAD! ==")
-        print (f'=============================================================================================')
-        time.sleep(second)
-        roguepath1()
-    elif answer2 == "b" and charanswer == "b":
-        print("== YOU HAVE CHOSE PATH 2 WHAT WILL WE FIND? ==")
-        print (f'=============================================================================================')
-        time.sleep(second)
-        roguepath2()
-    elif answer2 == "c" and charanswer == "b":
-        print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE ENCOUNTER? ==")
-        print (f'=============================================================================================')
-        time.sleep(second)
-        roguepath3()
-    else:
-        print ("== PLEASE CHOOSE A,B OR C ==")
+        im3.show()       
+    #choosing username and then it get saved into a folder called usernames to be able to be used across work sheets.
+    print (f'== TIME TO CHOOSE YOUR USERNAME ==')
+    name = input("type your username  : ").upper()
+    time.sleep(second)
+
+    with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'w') as file:
+        file.write(name)
+    print (f'=============================================================================================')   
+
+    print (f'== NICE TO MEET YOU {name} ==')
+    time.sleep(second)
+    print (f'=============================================================================================')   
+
+
+    print(f'== OK {name} ITS TIME TO PLAY THE GAME OF DIRECTIONS AND CHOICES')
+
+    print (f'=============================================================================================')
+
+    time.sleep(second)
+    #choosing a path
+    print(f'== WHICH WAY WOULD YOU LIKE TO GO? ==')
+    #path selection options.
+    print (f'a' + f'-'+(path1), f'b'+f'-'+(path2), f'c'+f'-'+(path3))
+
+    print (f'=============================================================================================')
+    #first encounter/attack with the goblin.
+    time.sleep(second)
+    while True:
         answer2=input("enter a,b or c  : ").lower()
-
-
-while True:
-    answer1 = input("choose fireball, zap or wack  : ").lower()
-    print (f'=============================================================================================')
-    if answer1 == "fireball":
-        goblin -= fireball
-        time.sleep(half)
-        print (f'== GOOD SHOT THE GOBLIN FELT THE BURN THERE! ==')
-        print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
-        print (f'=============================================================================================')
-        time.sleep(second)
-    elif answer1 == "zap":
-        goblin -= zap
-        time.sleep(half)
-        print (f'== GOOD SHOT GOBLIN IS ELECTRIFIED ABOUT THAT ONE! ==')
-        print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
-        print (f'=============================================================================================')
-        time.sleep(second)
-    elif answer1 == "wack":
-        goblin -= wack
-        time.sleep(half)
-        print (f'== YEAH WACK EM UP SOMeTIMES YOU GOTTA BE OLD SCHOOL!')
-        print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
-        print (f'=============================================================================================')
-        time.sleep(second)
-    else:
-        print ("Invalid move! Please choose from: fireball, zap or wack.")
-        answer1 = input("choose fireball, zap or wack  : ").lower()
-        #if goblin dies play kill_section() and goblin_kill()
-    if goblin <= 0:
-        kill_section()
-        goblin_kill()
-        break
-
-    #stops time for a second
-    time.sleep(second)
-
-    #goblins first attack.
-    print (f'== HE FIGHTS WITH SPIT AND IT HITS YOUR DOME!! ==')
-    character -= spit
-    time.sleep(half)
-    print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
-    print (f'=============================================================================================')
-    time.sleep(second)
-
-    print (f'== HOW DO YOU RESPOND? ==')
-    print (f'== fireball -30HP == zap -40HP == wack -20HP ==')
-    print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-    print (f'=============================================================================================')
+        if answer2 == "a" and charanswer == "a": 
+            print (f'== YOU HAVE ENCOUNTERED A GOBLIN HE SWINGS BUT MISSES WHATS YOUR NEXT MOVE? ==')
+            print (f'== fireball -30HP == zap -40HP == wack -20HP')
+            print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
+            print (f'=============================================================================================')
+            break
+        elif answer2 == "b" and charanswer == "a": 
+            print("== YOU HAVE CHOSE PATH 2 LETS SEE WHAT LURKS AHEAD! ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            first_sectionP2()
+        elif answer2 == "c" and charanswer == "a":
+            print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE FIND? ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            first_sectionP3()
+        elif answer2 == "a" and charanswer == "b": 
+            print("== YOU HAVE CHOSE PATH 1 LETS SEE WHAT LURKS AHEAD! ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            roguepath1()
+        elif answer2 == "b" and charanswer == "b":
+            print("== YOU HAVE CHOSE PATH 2 WHAT WILL WE FIND? ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            roguepath2()
+        elif answer2 == "c" and charanswer == "b":
+            print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE ENCOUNTER? ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            roguepath3()
+        elif answer2 =="a" and charanswer == "c":
+            print("== YOU HAVE CHOSE PATH 1 LETS SEE WHAT LURKS AHEAD! ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            warriorpaths()
+        elif answer2 =="a" and charanswer == "c":
+            print("== YOU HAVE CHOSE PATH 2 WHAT WILL WE FIND? ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            warriorpaths()
+        elif answer2 =="a" and charanswer == "c":
+            print("== YOU HAVE CHOSE PATH 3 WHAT WILL WE ENCOUNTER? ==")
+            print (f'=============================================================================================')
+            time.sleep(second)
+            warriorpaths()
+        else:
+            print ("== PLEASE CHOOSE A,B OR C ==")
+            answer2=input("enter a,b or c  : ").lower()
 
     while True:
-        answer2 = input("choose fireball, zap or wack  : ")
-        if answer2 == "fireball":
+        answer1 = input("choose fireball, zap or wack  : ").lower()
+        print (f'=============================================================================================')
+        if answer1 == "fireball":
             goblin -= fireball
             time.sleep(half)
-            print (f"== AMAZING WORK! A FEW MORE AND HE WILL BE DONE WITH! ==")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+            print (f'== GOOD SHOT THE GOBLIN FELT THE BURN THERE! ==')
+            print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]')
             print (f'=============================================================================================')
-        elif answer2 == "zap":
+            time.sleep(second)
+        elif answer1 == "zap":
             goblin -= zap
             time.sleep(half)
-            print (f"== THAT KIDS IS WHY YOU KEEP THE KNIFE OUT THE TOASTER! ==")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+            print (f'== GOOD SHOT GOBLIN IS ELECTRIFIED ABOUT THAT ONE! ==')
+            print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
             print (f'=============================================================================================')
-        elif answer2 == "wack":
+            time.sleep(second)
+        elif answer1 == "wack":
             goblin -= wack
             time.sleep(half)
-            print (f"== BOOOOOOOO LOW DAMAGE LOW IMPACT YAWWWNNNN! ==")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+            print (f'== YEAH WACK EM UP SOMeTIMES YOU GOTTA BE OLD SCHOOL!')
+            print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
             print (f'=============================================================================================')
+            time.sleep(second)
         else:
-            print ("Choose Fireball, Zap, Wack: ")
-            answer2 = input("choose fireball, zap or wack  : ")
+            print ("Invalid move! Please choose from: fireball, zap or wack.")
+            answer1 = input("choose fireball, zap or wack  : ").lower()
+            #if goblin dies play kill_section() and goblin_kill()
         if goblin <= 0:
             kill_section()
-            goblin_kill()  
+            goblin_kill()
             break
 
-        #random attack from the goblin
+        #stops time for a second
         time.sleep(second)
-        print (f'=============================================================================================')
-        random_reponse = random.choice(goblin_attack1)
-        print (random_reponse)
-        print (f'=============================================================================================')
-        time.sleep(second)
-        #chooses what to do depending on what the answer from the random list is.
-        if random_reponse == "== HE REPLIES WITH SLAP BUT HE MISSES THANK GOD ==":
-            print ("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU!")
-            print (f'=============================================================================================')
-            time.sleep(second)
-            print ("== YOUR TURN TO SHOW EM WHO IS BOSS! ==")
-            print ("== fireball -30HP == zap -40HP == wack -20HP")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-            print (f'=============================================================================================')  
 
-        if random_reponse == "== HE REPLIES WITH SLAP AND LANDS OOOFF THAT HURTS ==":
-            character -= slap
-            print ("== WELL YOU WIN SOME YOU LOOSE SOME ==")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-            print (f'=============================================================================================')
-            time.sleep(second)
-            print ("== YOUR TURN TO SHOW EM WHO IS BOSS! ==")
-            print ("== fireball -30HP == zap -40HP == wack -20HP")
-            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-            print (f'=============================================================================================')    
-    
-    
+        #goblins first attack.
+        print (f'== HE FIGHTS WITH SPIT AND IT HITS YOUR DOME!! ==')
+        character -= spit
+        time.sleep(half)
+        print (f'GOBLIN [ {goblin} HP] YOU [ {character} HP]') 
+        print (f'=============================================================================================')
+        time.sleep(second)
+
+        print (f'== HOW DO YOU RESPOND? ==')
+        print (f'== fireball -30HP == zap -40HP == wack -20HP ==')
+        print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+        print (f'=============================================================================================')
+
         while True:
-            answer3 = input("choose fireball, zap or wack  : ").lower()
-            if answer3 == "fireball":
+            answer2 = input("choose fireball, zap or wack  : ")
+            if answer2 == "fireball":
                 goblin -= fireball
                 time.sleep(half)
-                print (f'== {name} THAT MOVE WAS "FIRE" GET IT.... HA..HA..HA') #TITLE
+                print (f"== AMAZING WORK! A FEW MORE AND HE WILL BE DONE WITH! ==")
                 print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                 print (f'=============================================================================================')
-            elif answer3 == "zap":
+            elif answer2 == "zap":
                 goblin -= zap
                 time.sleep(half)
-                print (f'== {name} BBBZZZZZZZ BBZZZZZZZZ ALL I HEAR IS SIZiLING GOBLIN! ==') #TITLE
+                print (f"== THAT KIDS IS WHY YOU KEEP THE KNIFE OUT THE TOASTER! ==")
                 print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                 print (f'=============================================================================================')
-            elif answer3 == "wack":
+            elif answer2 == "wack":
                 goblin -= wack
                 time.sleep(half)
-                print (f'== {name} THIS IS SO NO DEMURE YOU REALLY NEED TO PICK UP THE DAMAGE! ==') #TITLE
+                print (f"== BOOOOOOOO LOW DAMAGE LOW IMPACT YAWWWNNNN! ==")
                 print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                 print (f'=============================================================================================')
             else:
-                print("Choose Fireball, Zap, Wack")
-                answer3 = input("choose fireball, zap or wack  : ").lower()
-                
+                print ("Choose Fireball, Zap, Wack: ")
+                answer2 = input("choose fireball, zap or wack  : ")
             if goblin <= 0:
                 kill_section()
                 goblin_kill()  
                 break
 
+            #random attack from the goblin
             time.sleep(second)
             print (f'=============================================================================================')
-            random_response2 = random.choice(goblin_attack2)
-            print(random_response2)
+            random_reponse = random.choice(goblin_attack1)
+            print (random_reponse)
             print (f'=============================================================================================')
             time.sleep(second)
-
-            if random_response2 == "== GOBLIN USES BITE AND MISSES! ==":
-                print("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU! ==")
-                print("=============================================================================================")
+            #chooses what to do depending on what the answer from the random list is.
+            if random_reponse == "== HE REPLIES WITH SLAP BUT HE MISSES THANK GOD ==":
+                print ("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU!")
+                print (f'=============================================================================================')
                 time.sleep(second)
-                print("== SURELY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==")  # TITLE
-                print(f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP ==")  # ATTACK LIST
-                print("=============================================================================================")
+                print ("== YOUR TURN TO SHOW EM WHO IS BOSS! ==")
+                print ("== fireball -30HP == zap -40HP == wack -20HP")
+                print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                print (f'=============================================================================================')  
 
-            if random_response2 == "== GOBLIN USES BITE AND LANDS IT! ==":
-                character -= bite
-                print("== WELL YOU WIN SOME YOU LOSE SOME ==")
-                print(f"== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==")
-                print("=============================================================================================")
+            if random_reponse == "== HE REPLIES WITH SLAP AND LANDS OOOFF THAT HURTS ==":
+                character -= slap
+                print ("== WELL YOU WIN SOME YOU LOOSE SOME ==")
+                print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                print (f'=============================================================================================')
                 time.sleep(second)
-                print("== SURELY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==")  # TITLE
-                print(f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP ==")  # ATTACK LIST
-                print("=============================================================================================")
-                
+                print ("== YOUR TURN TO SHOW EM WHO IS BOSS! ==")
+                print ("== fireball -30HP == zap -40HP == wack -20HP")
+                print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                print (f'=============================================================================================')    
+        
+        
             while True:
-                answer4 = input("Choose fireball, zap or wack: ").lower()
-                if answer4 == "fireball":
+                answer3 = input("choose fireball, zap or wack  : ").lower()
+                if answer3 == "fireball":
                     goblin -= fireball
                     time.sleep(half)
-                    print (f'== A TRUE WIZARD SICKING TO HIS FIREBALL! ==') #TITLE
-                    print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==') #goblin and character health
-                    print (f'=============================================================================================')
-                elif answer4 == "zap":
-                    goblin -= zap
-                    time.sleep(half)
-                    print (f'== DOES HE NEED A DOCTOR OR AN ELECTROCUTION... MAYBE BOTH XD ==') #TITLE
+                    print (f'== {name} THAT MOVE WAS "FIRE" GET IT.... HA..HA..HA') #TITLE
                     print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                     print (f'=============================================================================================')
-                elif answer4 == "wack":
+                elif answer3 == "zap":
+                    goblin -= zap
+                    time.sleep(half)
+                    print (f'== {name} BBBZZZZZZZ BBZZZZZZZZ ALL I HEAR IS SIZiLING GOBLIN! ==') #TITLE
+                    print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                    print (f'=============================================================================================')
+                elif answer3 == "wack":
                     goblin -= wack
                     time.sleep(half)
-                    print (f'== BRO IS LAUGHING AT YOU PERSONALLY I WOULD NOT TAKE THAT.... ==') #TITLE
+                    print (f'== {name} THIS IS SO NO DEMURE YOU REALLY NEED TO PICK UP THE DAMAGE! ==') #TITLE
                     print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                     print (f'=============================================================================================')
                 else:
                     print("Choose Fireball, Zap, Wack")
+                    answer3 = input("choose fireball, zap or wack  : ").lower()
                     
                 if goblin <= 0:
                     kill_section()
                     goblin_kill()  
                     break
-            
+
                 time.sleep(second)
                 print (f'=============================================================================================')
-                random_reponse3 = random.choice(goblin_attack3)
-                print(random_reponse3)
+                random_response2 = random.choice(goblin_attack2)
+                print(random_response2)
                 print (f'=============================================================================================')
                 time.sleep(second)
 
-                if random_reponse3 == "== GOBLIN USES SPIT AND MISSES! ==":
-                    print ("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU! ==")
-                    print ("== SURLY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==") #TITLE
-                    print (f'== fireball -30HP == zap -40HP == wack -20HP ==') # ATTACK LIST
-                    print (f'=============================================================================================')
+                if random_response2 == "== GOBLIN USES BITE AND MISSES! ==":
+                    print("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU! ==")
+                    print("=============================================================================================")
+                    time.sleep(second)
+                    print("== SURELY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==")  # TITLE
+                    print(f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP ==")  # ATTACK LIST
+                    print("=============================================================================================")
+
+                if random_response2 == "== GOBLIN USES BITE AND LANDS IT! ==":
+                    character -= bite
+                    print("== WELL YOU WIN SOME YOU LOSE SOME ==")
+                    print(f"== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==")
+                    print("=============================================================================================")
+                    time.sleep(second)
+                    print("== SURELY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==")  # TITLE
+                    print(f"== fireball -{fireball}HP == zap -{zap}HP == Wack -{wack}HP ==")  # ATTACK LIST
+                    print("=============================================================================================")
                     
-                if random_reponse3 == "== GOBLIN USES SPIT AND LANDS IT ==":
-                    character -= spit
-                    print ("== WELL YOU WIN SOME YOU LOOSE SOME ==")
-                    print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                    print ("== SURLY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==") #TITLE
-                    print (f'== fireball -30HP == zap -40HP == wack -20HP ==') # ATTACK LIST
-                    print (f'=============================================================================================')
-
-
                 while True:
-                    answer5 = input("Choose fireball, zap or wack  : ").lower()
-                    if answer5 == "fireball":
+                    answer4 = input("Choose fireball, zap or wack: ").lower()
+                    if answer4 == "fireball":
                         goblin -= fireball
                         time.sleep(half)
-                        print (f'== GOOD CHOICE CANT BEAT A GOOD OLD FIREBALL! ==') #TITLE
-                        print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                    elif answer5 == "zap":
+                        print (f'== A TRUE WIZARD SICKING TO HIS FIREBALL! ==') #TITLE
+                        print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==') #goblin and character health
+                        print (f'=============================================================================================')
+                    elif answer4 == "zap":
                         goblin -= zap
                         time.sleep(half)
-                        print (f'== ZAPPER MC ZAPPINGTON IMA CALL YOU FROM NOW ON! ==') #TITLE
+                        print (f'== DOES HE NEED A DOCTOR OR AN ELECTROCUTION... MAYBE BOTH XD ==') #TITLE
                         print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
-                    elif answer5 == "wack":
+                        print (f'=============================================================================================')
+                    elif answer4 == "wack":
                         goblin -= wack
                         time.sleep(half)
-                        print (f'== USING WACK IS LIKE PUTTING EGGS IN THE FREEZER..... USELESS! ==') #TITLE
+                        print (f'== BRO IS LAUGHING AT YOU PERSONALLY I WOULD NOT TAKE THAT.... ==') #TITLE
                         print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                        print (f'=============================================================================================')
                     else:
                         print("Choose Fireball, Zap, Wack")
-                        answer5 = input("choose fireball, zap or wack  : ").lower()
-                    
+                        
                     if goblin <= 0:
                         kill_section()
                         goblin_kill()  
                         break
-                            
+                
+                    time.sleep(second)
+                    print (f'=============================================================================================')
+                    random_reponse3 = random.choice(goblin_attack3)
+                    print(random_reponse3)
+                    print (f'=============================================================================================')
+                    time.sleep(second)
+
+                    if random_reponse3 == "== GOBLIN USES SPIT AND MISSES! ==":
+                        print ("== LOOKS LIKE YOU GET A SECOND GO FOR FREE LUCKY YOU! ==")
+                        print ("== SURLY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==") #TITLE
+                        print (f'== fireball -30HP == zap -40HP == wack -20HP ==') # ATTACK LIST
+                        print (f'=============================================================================================')
                         
-#====================================================================================================================================#
+                    if random_reponse3 == "== GOBLIN USES SPIT AND LANDS IT ==":
+                        character -= spit
+                        print ("== WELL YOU WIN SOME YOU LOOSE SOME ==")
+                        print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                        print ("== SURLY THIS WILL BE THE FINAL ATTACK FOR SURE THIS TIME I JUST KNOW IT! ==") #TITLE
+                        print (f'== fireball -30HP == zap -40HP == wack -20HP ==') # ATTACK LIST
+                        print (f'=============================================================================================')
+
+
+                    while True:
+                        answer5 = input("Choose fireball, zap or wack  : ").lower()
+                        if answer5 == "fireball":
+                            goblin -= fireball
+                            time.sleep(half)
+                            print (f'== GOOD CHOICE CANT BEAT A GOOD OLD FIREBALL! ==') #TITLE
+                            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                        elif answer5 == "zap":
+                            goblin -= zap
+                            time.sleep(half)
+                            print (f'== ZAPPER MC ZAPPINGTON IMA CALL YOU FROM NOW ON! ==') #TITLE
+                            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                        elif answer5 == "wack":
+                            goblin -= wack
+                            time.sleep(half)
+                            print (f'== USING WACK IS LIKE PUTTING EGGS IN THE FREEZER..... USELESS! ==') #TITLE
+                            print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
+                        else:
+                            print("Choose Fireball, Zap, Wack")
+                            answer5 = input("choose fireball, zap or wack  : ").lower()
+                        
+                        if goblin <= 0:
+                            kill_section()
+                            goblin_kill()  
+                            break
+                                
+                            
+    #====================================================================================================================================#
+main()

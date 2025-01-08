@@ -1,3 +1,9 @@
 from GameClasses import Start
 
-Start()
+
+
+def warriorpaths():
+    Start()
+    
+if __name__ == "__main__":
+    warriorpaths()

@@ -152,7 +152,7 @@ stored_response = None
 #==============================================================================================================================#
 def roguepath1():
     global rogue, xyrif, last_response, stored_response
-    with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'r') as file:
+    with open(r'C:\Users\callu\Desktop\software Dev\coding\game\username.txt', 'r') as file:
         name = file.read()
     print (f'=============================================================================================')      
     print (Fore.RED + f"== YOU HAVE ENETERED PATH 1 WITH THE ROGUE GET READY! ==")
@@ -225,6 +225,7 @@ def roguepath1():
         boss_fight()
     elif rogue < 0:
         show_charcter_Death()
-        
-roguepath1()
+
+if __name__ == "__main__":
+    roguepath1()
 
