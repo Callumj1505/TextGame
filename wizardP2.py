@@ -45,9 +45,6 @@ import random
 from Gamelists import goblin_attack2, goblin_attack1, goblin_attack3, gorlock_list, gorlock_list2, gorlock_list3, gorlock_list4
 from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 
-im = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\r.png')
-im2 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\wi.png')
-im3 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\w.png')
 
 #================================================================================================================================-#
 #PATH 2

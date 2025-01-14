@@ -37,9 +37,9 @@ slap = 25
 bite = 20
 
 #map image to display based on the character you choose
-im = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\r.png')
-im2 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\wi.png')
-im3 = Image.open(r'C:\Users\callu\Desktop\software Dev\coding\game\w.png')
+im = Image.open(r'r.png')
+im2 = Image.open(r'wi.png')
+im3 = Image.open(r'w.png')
 
 #seconds for time.sleep
 second3 = 3
