@@ -370,13 +370,13 @@ class Enemies():
             print(f"======= WARRIOR HP: {GameVariables.Warrior} =======")
             self.EnemyMenu()
             print("===============================")
-            answer = input("Choose 1, 2 or 3 > ").lower()
+            answer = input("Choose Option 1 - 4 > ").lower()
             if answer == "1":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[0]} ==")
                 print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[0]} HP: {GameVariables.chosen_hp[0]} ==")
                 print(f"== CHOOSE SHIELD BASH - {GameVariables.shield_bash}DMG - RAGING STRIKE {GameVariables.shield_bash}DMG - WHIRLWIND STRIKE {GameVariables.whirlwind_slash}DMG ==")
                 print (f'=============================================================================================')
-                attack_answer = input("Choose Atack > ")
+                attack_answer = input("Choose Atack a, b or c > ")
                 if attack_answer in attack_description2:
                     print (f'=============================================================================================')
                     print(attack_description2[attack_answer])
