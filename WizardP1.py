@@ -448,7 +448,7 @@ def main():
     name = input("type your username  : ").upper()
     time.sleep(second)
 
-    with open(r'C:\Users\callu\Desktop\software Dev\coding\game\username.txt', 'w') as file:
+    with open(r'username.txt', 'w') as file:
         file.write(name)
     print (f'=============================================================================================')   
 

@@ -50,7 +50,7 @@ from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 #================================================================================================================================-#
 #PATH 2
 #this brings over name from gamebv1.py
-with open(r'C:\Users\callu\Desktop\software Dev\coding\game\username.txt', 'r') as file:
+with open(r'username.txt', 'r') as file:
     name = file.read()
     
 def goblin_killP3():

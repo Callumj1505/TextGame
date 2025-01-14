@@ -127,7 +127,7 @@ stored_response = None
 #==============================================================================================================================#
 def roguepath2():
     global rogue, xyrif, last_response, stored_response
-    with open(r'C:\Users\callu\Desktop\software Dev\coding\game\username.txt', 'r') as file:
+    with open(r'username.txt', 'r') as file:
         name = file.read()
     print (f'=============================================================================================')      
     print (Fore.RED + f"== YOU HAVE ENETERED PATH 1 WITH THE ROGUE GET READY! ==")
