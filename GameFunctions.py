@@ -24,20 +24,21 @@ def Boss_attack_func():
 #1st enemy attack function Rogue P1
 #==============================================================================================================================#
 def xyrif_attack_func():
-        global rogue, xyrif_random_attacks
-        enemy_attack_choice = random.choice(xyrif_random_attacks)
-        print(enemy_attack_choice)
-        if enemy_attack_choice == "HE USES LIGHT BEAM AND LANDS IT!":
-            rogue -= 30
-            print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
-        elif enemy_attack_choice == "== XYRIF ATTACKS WITH ANITMATTER PULSE AND LANDS IT! ==":
-            rogue -= 20
-            print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
-        elif enemy_attack_choice == "== HE PUNCHES YOU AND LANDS IT, UNLUCKY! ==":
-            rogue -= 10
-            print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
-        else:
-            print("== WE CAN ALL BE GREATFUL HE MISSED! ==")
+    from RogueP1 import rogue
+    global xyrif_random_attacks
+    enemy_attack_choice = random.choice(xyrif_random_attacks)
+    print(enemy_attack_choice)
+    if enemy_attack_choice == "HE USES LIGHT BEAM AND LANDS IT!":
+        rogue -= 30
+        print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
+    elif enemy_attack_choice == "== XYRIF ATTACKS WITH ANITMATTER PULSE AND LANDS IT! ==":
+        rogue -= 20
+        print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
+    elif enemy_attack_choice == "== HE PUNCHES YOU AND LANDS IT, UNLUCKY! ==":
+        rogue -= 10
+        print(f"== XYRIF HAS {xyrif}HP | YOU ARE AT {rogue}HP ==")
+    else:
+        print("== WE CAN ALL BE GREATFUL HE MISSED! ==")
 
 #first enemy kill text Rogue P1
 #==============================================================================================================================#

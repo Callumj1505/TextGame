@@ -50,8 +50,8 @@ from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 #================================================================================================================================-#
 #PATH 2
 #this brings over name from gamebv1.py
-with open(r'username.txt', 'r') as file:
-    name = file.read()
+# with open(r'game\username.txt', 'r') as file:
+#     name = file.read()
     
 def goblin_killP3():
     #boss hp
@@ -394,6 +394,9 @@ def goblin_killP3():
     
 def first_sectionP3():
     global fireball, zap, wack, character, goblin
+    from WizardP1 import name
+    with open(r'username.txt', 'r') as file:
+        file.write(name)
 
     # moves goblin
     spit = 15
@@ -638,3 +641,6 @@ def first_sectionP3():
                             goblin_killP3()  
                             break
     #====================================================================================================================================#
+    
+if __name__ == "__main__":
+    first_sectionP3()

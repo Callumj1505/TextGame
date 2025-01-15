@@ -49,8 +49,6 @@ from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 #================================================================================================================================-#
 #PATH 2
 #this brings over name from wizardP1.py
-with open(r'username.txt', 'r') as file:
-    name = file.read()
     
 def goblin_killP2():
     #boss hp
@@ -377,6 +375,9 @@ def goblin_killP2():
     
     
 def first_sectionP2():
+    from WizardP1 import name
+    with open(r'username.txt', 'r') as file:
+        file.write(name)
     character = 100
     goblin = 100
     
@@ -630,3 +631,5 @@ def first_sectionP2():
                             
                             
     #====================================================================================================================================#
+if __name__ == "__main__":
+    first_sectionP2()

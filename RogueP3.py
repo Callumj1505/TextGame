@@ -151,7 +151,7 @@ def roguepath3():
     with open(r'username.txt', 'r') as file:
         name = file.read()
     print (f'=============================================================================================')      
-    print (Fore.RED + f"== YOU HAVE ENETERED PATH 1 WITH THE ROGUE GET READY! ==")
+    print (Fore.RED + f"== YOU HAVE ENETERED PATH 3 WITH THE ROGUE GET READY! ==")
     print (f'=============================================================================================')
     time.sleep(1)
     print (Fore.CYAN + f"== TO CHOOSE ATTACK PLEASE TYPE 'A' - 'B' - 'C' ==" + Style.RESET_ALL)

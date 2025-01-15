@@ -36,11 +36,6 @@ spit = 15
 slap = 25
 bite = 20
 
-#map image to display based on the character you choose
-im = Image.open(r'r.png')
-im2 = Image.open(r'wi.png')
-im3 = Image.open(r'w.png')
-
 #seconds for time.sleep
 second3 = 3
 second5 = 5
@@ -426,23 +421,17 @@ def main():
     if charanswer == "a":
         print (f'=============================================================================================')    
         print (f'Healthy choice strong for his spells and powers you can be sure to stand your are ground as long as you keep your distance :)')
-        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
         print (f'=============================================================================================')    
         time.sleep(second3)
-        im.show() 
     elif charanswer == "b":
         print (f'=============================================================================================')    
         print (f'Rogue: Agile and stealthy, excels in quick attacks and evasion. Use your speed to outmaneuver enemies.')
-        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
         print (f'=============================================================================================') 
         time.sleep(second3)
-        im2.show()
     elif charanswer == "c":
         print (f'=============================================================================================')    
         print (f'Warrior: Strong and resilient, capable of withstanding heavy attacks. Use your strength to overpower foes.')
-        print (f'also here is your map for your travels you can access this at any time just keep it open im the background')
-        print (f'=============================================================================================')
-        im3.show()       
+        print (f'=============================================================================================')    
     #choosing username and then it get saved into a folder called usernames to be able to be used across work sheets.
     print (f'== TIME TO CHOOSE YOUR USERNAME ==')
     name = input("type your username  : ").upper()
@@ -760,4 +749,5 @@ def main():
                                 
                             
     #====================================================================================================================================#
-main()
+if __name__ == "__main__":
+    main()
