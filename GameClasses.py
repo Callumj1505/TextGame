@@ -208,8 +208,8 @@ class Enemies():
             print (f'=============================================================================================')
             response_list3.pop(response)
             print(f"== VARNYX HP: {GameVariables.varnyx_the_shardwoven} WARRIOR HP: {GameVariables.Warrior} ==")
-            Warrior_attack = input("choose attack > ").lower()
-            if Warrior_attack == "shield bash":
+            Warrior_attack = input("Choose Attack [A, B, C, D] > ").lower()
+            if Warrior_attack == "a":
                 GameVariables.varnyx_the_shardwoven -= GameVariables.shield_bash
                 sb_attack = random.choice(shield_bash_response)
                 print(sb_attack)
@@ -218,7 +218,7 @@ class Enemies():
                 GameVariables.score += random.randint(2,7)
                 self.Boss_Attack()
                 print (f'=============================================================================================')
-            elif Warrior_attack == "raging strike":
+            elif Warrior_attack == "b":
                 GameVariables.varnyx_the_shardwoven -= GameVariables.raging_strike
                 rs_attack = random.choice(raging_strike_response)
                 print(rs_attack)
@@ -227,7 +227,7 @@ class Enemies():
                 GameVariables.score += random.randint(2,7)
                 self.Boss_Attack()
                 print (f'=============================================================================================')
-            elif Warrior_attack == "whirlwind slash":
+            elif Warrior_attack == "c":
                 GameVariables.varnyx_the_shardwoven -= GameVariables.whirlwind_slash
                 ws_attack = random.choice(whirlwind_slash_response)
                 print(ws_attack)
@@ -236,7 +236,7 @@ class Enemies():
                 GameVariables.score += random.randint(2,7)
                 self.Boss_Attack()
                 print (f'=============================================================================================')
-            elif Warrior_attack == "spectral blade":
+            elif Warrior_attack == "d":
                 GameVariables.varnyx_the_shardwoven -= GameVariables.spectral_blade
                 sb2_attack = random.choice(spectral_blade_response)
                 print(sb2_attack)
@@ -247,25 +247,17 @@ class Enemies():
                 print (f'=============================================================================================')
             else:
                 print("== PLEASE ENTER A VALID INPUT ==")
-                Warrior_attack = input("choose attack > ").lower() 
+                Warrior_attack = input("Choose Attack [A, B, C, D] > ").lower() 
                 
             if GameVariables.varnyx_the_shardwoven <= 0:
-                print (f'=============================================================================================')
-                print("== YOU HAVE DEFEATED VARNYX THE SHARDWOVEN! ==")
-                with open(r'C:\Users\callu\Desktop\coding\game\username.txt', 'r') as file:
-                    name = file.read()
-                with open(r'C:\Users\callu\Desktop\coding\game\score.txt', 'w') as file:
-                    file.write(f"{name} Your Score: {GameVariables.score}")
-                    print (f'=============================================================================================')
                 kill_section()
                 print (f'=============================================================================================')
                 show_ending_section()
                 print (f'=============================================================================================')
-            if GameVariables.Warrior <= 0:
+            elif GameVariables.Warrior <= 0:
                 print (f'=============================================================================================')
                 show_charcter_Death()
                 print (f'=============================================================================================')
-                break
 #this function handles the enemies attacks
     def Boss_Attack(self):
         print (f'=============================================================================================')
@@ -370,13 +362,12 @@ class Enemies():
             print(f"======= WARRIOR HP: {GameVariables.Warrior} =======")
             self.EnemyMenu()
             print("===============================")
-            answer = input("Choose Option 1 - 4 > ").lower()
+            answer = input("Choose Option [1 - 4] > ").lower()
             if answer == "1":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[0]} ==")
-                print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[0]} HP: {GameVariables.chosen_hp[0]} ==")
                 print(f"== CHOOSE SHIELD BASH - {GameVariables.shield_bash}DMG - RAGING STRIKE {GameVariables.shield_bash}DMG - WHIRLWIND STRIKE {GameVariables.whirlwind_slash}DMG ==")
                 print (f'=============================================================================================')
-                attack_answer = input("Choose Atack a, b or c > ")
+                attack_answer = input("Choose Attack [A, B, C] > ")
                 if attack_answer in attack_description2:
                     print (f'=============================================================================================')
                     print(attack_description2[attack_answer])
@@ -415,17 +406,16 @@ class Enemies():
                     print (f'=============================================================================================')
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
-                    attack_answer = input("Choose Atack > ")
+                    attack_answer = input("Choose Attack [A, B, C] > ")
                     if GameVariables.chosen_hp[0] <= 0:
                         GameVariables.chosen_names.pop(0)
                         GameVariables.chosen_hp.pop(0)
                         GameVariables.enemycreation.pop(0)
             elif answer == "2":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[1]} ==")
-                print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[1]} HP: {GameVariables.chosen_hp[1]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 print (f'=============================================================================================')
-                attack_answer = input("Choose Atack > ")
+                attack_answer = input("Choose Attack [A, B, C] > ")
                 if attack_answer in attack_description2:
                     print (f'=============================================================================================')
                     print(attack_description2[answer])
@@ -462,13 +452,12 @@ class Enemies():
                     print (f'=============================================================================================')
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
-                    attack_answer = input("Choose Atack > ")
+                    attack_answer = input("Choose Attack [A, B, C] > ")
             elif answer == "3":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[2]} ==")
-                print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[2]} HP: {GameVariables.chosen_hp[2]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 print (f'=============================================================================================')
-                attack_answer = input("Choose Atack > ")
+                attack_answer = input("Choose Attack [A, B, C] > ")
                 if answer in attack_description2:
                     print (f'=============================================================================================')
                     print(attack_description2[answer])
@@ -506,13 +495,12 @@ class Enemies():
                     print (f'=============================================================================================')
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
-                    attack_answer = input("Choose Atack > ")
+                    attack_answer = input("Choose Attack [A, B, C] > ")
             elif answer == "4":
                 print(f"== YOU CHOSE TO ATTACK {GameVariables.chosen_names[3]} ==")
-                print(f"== HOW WILL YOU ATTACK ==\n Name: {GameVariables.chosen_names[3]} HP: {GameVariables.chosen_hp[3]} ==")
                 print(f"== Choose Shield Bash - {GameVariables.shield_bash}Dmg - Raging Strike {GameVariables.shield_bash}Dmg - Whirlwind Strike {GameVariables.whirlwind_slash}Dmg ==")
                 print (f'=============================================================================================')
-                attack_answer = input("Choose Atack > ")
+                attack_answer = input("Choose Attack [A, B, C] > ")
                 if answer in attack_description2:
                     print (f'=============================================================================================')
                     print(attack_description2[answer])
@@ -550,10 +538,10 @@ class Enemies():
                     print (f'=============================================================================================')
                 else:
                     print("== PLEASE ENTER A VALID INPUT ==")
-                    attack_answer = input("Choose Atack > ")
+                    attack_answer = input("Choose Attack [A, B, C] > ")
             else:
                 print("== PLEASE TYPE A VALID INPUT :) ==")
-                answer = input("Choose Enemy > ").lower()
+                answer = input("Choose Enemy [1 - 4] > ").lower()
                 
             if all(hp <= 0 for hp in GameVariables.chosen_hp):
                 kill_section3()

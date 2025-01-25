@@ -4,11 +4,9 @@ import random
 #==============================================================================================================================#
 xyrif_random_attacks = [
     "== HE USES LIGHT BEAM AND LANDS IT! ==",
-    "== HE USES LIGHT BEAM AND MISSES! ==",
     "== XYRIF ATTACKS WITH ANITMATTER PULSE AND LANDS IT!",
-    "== XYRIF ATTACKS WITH ANITMATTER PULSE AND MISSES, LUCKY YOU! ==",
     "== HE PUNCHES ON YOU AND LANDS IT, UNLUCKY! ==",
-    "== HE PUNCHES ON YOU AND MISSES, WE WILL COUNT THAT ONE AS A WIN! =="
+    "== HE HAS MISSED =="
 ]
 #ROGUE THIS PRINTS WHEN POISON PURGE IS CHOSEN
 #==============================================================================================================================#
@@ -64,23 +62,22 @@ response_list = [
 #RANDOM RESPONSE LISRT FOR BOSS ROGUE
 #==============================================================================================================================#
 response_list2 = [
-    f"== LETS SHOW THIS GUY WHO IS THE REAL OG IN THESE ENDS! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==",#1
-    f"== JUST BECAUSE HE IS BIGGER DOESN'T MEAN HE IS BETTER STAND STRONG! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==", #2
-    f"== TEMPEST GUARDIAN ISN'T READY FOR THE POWER YOU HAVE.. LETS SHOW HIM! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==",#3
-    f"== COMMANDER ME AND THE WHOLE TEAM BELIEVES IN YOU! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==", #4
-    f"== SIR WINNING IS IN YOUR BLOOD.. LETS SHOW THEM WHY! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==", #5
-    f"== THERE CAN ONLY BE ONE WINNER AND WE KNOW IT CAN BE YOU! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP ==" #6
+    f"== LETS SHOW THIS GUY WHO IS THE REAL OG IN THESE ENDS! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==",#1
+    f"== JUST BECAUSE HE IS BIGGER DOESN'T MEAN HE IS BETTER STAND STRONG! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==", #2
+    f"== TEMPEST GUARDIAN ISN'T READY FOR THE POWER YOU HAVE.. LETS SHOW HIM! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==",#3
+    f"== COMMANDER ME AND THE WHOLE TEAM BELIEVES IN YOU! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==", #4
+    f"== SIR WINNING IS IN YOUR BLOOD.. LETS SHOW THEM WHY! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==", #5
+    f"== THERE CAN ONLY BE ONE WINNER AND WE KNOW IT CAN BE YOU! ==\n== poison Purge -35HP == Infect -20HP == Poison Rain -30HP == soul_burst - 40hp ==" #6
 ]
 
 #THIS LINKS TO THE ATTACK FUNCTION FOR THE BOSS
 #==============================================================================================================================#
 tempest_random_attacks = [
-    "== HE USES WRAITH STRIKE AND LANDS IT! ==",
-    "== HE USES WRAITH STRIKE AND MISSES! ==",
+    "== HE USES WRAITH SWING AND LANDS IT! ==",
     "== TEMPEST GUARDIAN IS CHARGING PULSE BLAST WITH HE SHOOTS AND LANDS IT!",
-    "== TEMPEST GUARDIAN ATTACKS WITH PULSE BLAST AND MISSES, LUCKY YOU! ==",
     "== HE USES CALL OF GUARDIANS AND LANDS IT, UNLUCKY! ==",
-    "== HE USES CALL OF GUARDIANS AND MISSES, WE WILL COUNT THAT ONE AS A WIN! =="
+    "== HE USES WRAITH STRIKE AND LANDS IT! =="
+    "== HE HAS MISSED =="
 ]
 
 #ROGUE CHEST OPENING LIST

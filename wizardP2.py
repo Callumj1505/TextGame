@@ -51,6 +51,7 @@ from GameFunctions import show_ending_section, show_charcter_Death, kill_section
 #this brings over name from wizardP1.py
     
 def goblin_killP2():
+    global character,gorlock_the_destroyer
     #boss hp
     gorlock_the_destroyer = 100
 
@@ -247,7 +248,7 @@ def goblin_killP2():
             print (f'=============================================================================================')
             
             if gorlock_response3 == "== HERE IT COMES... HERE IT LANDS AND HE MISSES HAMMER SWING IM HAPPY FOR YOU PAL! ==":
-                print(f"== {name} YOU KNOW I DIDN'T SEE YOU DODGING THAT ONE BUT YOU DID!==")  # TITLE
+                print(f"== YOU KNOW I DIDN'T SEE YOU DODGING THAT ONE BUT YOU DID!==")  # TITLE
                 print("=============================================================================================")
                 time.sleep(second)
                 print("== YOU ARE RUNNING OUT OF CHANCES BETTER DO SOMETHING! ==")  # TITLE
@@ -256,7 +257,7 @@ def goblin_killP2():
 
             if gorlock_response3 == "== PLEASE NO NOT THE HAMMER AGAIN! BOOM YOUR SQUISHED WITH HIS HAMMER SWING ==":
                 character -= Hammer_swing
-                print(f"== {name} DAMN YOUR TAKING A BEATING BETTER END THIS QUICK! ==")
+                print(f"== DAMN YOUR TAKING A BEATING BETTER END THIS QUICK! ==")
                 print(f"== GOBLIN [ {gorlock_the_destroyer} HP] YOU [ {character} HP] ==")
                 print("=============================================================================================")
                 time.sleep(second)
@@ -375,9 +376,7 @@ def goblin_killP2():
     
     
 def first_sectionP2():
-    from WizardP1 import name
-    with open(r'username.txt', 'r') as file:
-        file.write(name)
+    global character, goblin
     character = 100
     goblin = 100
     
@@ -504,19 +503,19 @@ def first_sectionP2():
                 if answer3 == "fireball":
                     goblin -= fireball
                     time.sleep(half)
-                    print (f'== {name} THAT MOVE WAS "FIRE" GET IT.... HA..HA..HA') #TITLE
+                    print (f'== THAT MOVE WAS "FIRE" GET IT.... HA..HA..HA') #TITLE
                     print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                     print (f'=============================================================================================')
                 elif answer3 == "zap":
                     goblin -= zap
                     time.sleep(half)
-                    print (f'== {name} BBBZZZZZZZ BBZZZZZZZZ ALL I HEAR IS SIZZLING GOBLIN! ==') #TITLE
+                    print (f'== BBBZZZZZZZ BBZZZZZZZZ ALL I HEAR IS SIZZLING GOBLIN! ==') #TITLE
                     print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                     print (f'=============================================================================================')
                 elif answer3 == "wack":
                     goblin -= wack
                     time.sleep(half)
-                    print (f'== {name} THIS IS SO NO DEMURE YOU REALLY NEED TO PICK UP THE DAMAGE! ==') #TITLE
+                    print (f'== THIS IS SO NO DEMURE YOU REALLY NEED TO PICK UP THE DAMAGE! ==') #TITLE
                     print (f'== GOBLIN [ {goblin} HP] YOU [ {character} HP] ==')
                     print (f'=============================================================================================')
                 else:

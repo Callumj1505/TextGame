@@ -1,7 +1,5 @@
 from GameClasses import Start
 
-
-
 def warriorpaths():
     Start()
     
