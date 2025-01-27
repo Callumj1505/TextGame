@@ -216,4 +216,3 @@ def roguepath2():
 if __name__ == "__main__":
     roguepath2()
 
-roguepath2()

@@ -638,5 +638,3 @@ def first_sectionP3():
     
 if __name__ == "__main__":
     first_sectionP3()
-    
-first_sectionP3()

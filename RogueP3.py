@@ -143,7 +143,7 @@ stored_response = None
 
 # First Fight starting
 # ==============================================================================================================================#
-def roguepath1():
+def roguepath3():
     global poison_purge, infect, poison_rain, soul_burst, rogue, stored_response
     from GameFunctions import xyrif_attack_func, kill_section, show_charcter_Death
     with open(r'username.txt', 'r') as file:
@@ -221,6 +221,5 @@ def roguepath1():
             show_charcter_Death()
 
 if __name__ == "__main__":
-    roguepath1()
+    roguepath3()
 
-roguepath1()
